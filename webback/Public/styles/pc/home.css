@@ -1,0 +1,36 @@
+.login-slogen { background: url("../../images/web/home/login_bg.jpg") no-repeat center top; background-size: cover; }
+.login-slogen .container .tt { margin: 20% auto 10%; text-align: center; }
+.login-slogen .container .btns { text-align: center; }
+.login-slogen .container .btns .btn { width: 230px; margin: 0 10px; }
+.login-slogen .container .btns .btn-default { color: #fff; background-color: transparent; }
+.shortcut-links .container { padding: 100px 0; border-bottom: 1px solid #c5c5c5; }
+.shortcut-links .item { text-align: center; }
+.shortcut-links .item a:hover { text-decoration: none; }
+.shortcut-links .item .tt { margin-top: 20px; }
+.home-banner { background-color: #fff; }
+.home-banner .container { position: relative; height: 100%; padding: 10% 600px 0 60px; }
+.home-banner .tt { margin-bottom: 20px; font-size: 40px; }
+.home-banner .tag { line-height: 24px; font-size: 14px; }
+.home-banner .code-box { margin-top: 20px; }
+.home-banner .code-box .icons { float: left; }
+.home-banner .code-box .icon { display: inline-block; padding: 0 10px; text-align: center; }
+.home-banner .code-box .icon .fa { width: 44px; height: 44px; line-height: 44px; border-radius: 50%; text-align: center; font-size: 32px; color: #fff; background-color: #939393; }
+.home-banner .code-box .icon .tt { text-align: center; font-size: 12px; color: #000; }
+.home-banner .code-box .code { float: right; margin-right: 40px; text-align: center; }
+.home-banner .code-box .code .tt { margin-top: 10px; font-size: 18px; color: #000; }
+.home-banner .banner-img { position: absolute; bottom: 0; right: 70px; max-height: 100%; }
+.home-news .container { padding-top: 80px; }
+.home-news .news-list .box { background-color: #fff; }
+.home-about, .home-about .container { background-color: #b2b2b2; }
+.home-about-box { padding: 90px 0; }
+.home-about-box .img { padding: 70px 0 0 0; }
+.home-about-box .img img { width: 500px; height: 334px; }
+.home-about-box .info { padding-left: 40px; color: #fff; }
+.home-about-box .info .tt { margin-bottom: 20px; font-size: 40px; }
+.home-about-box .info .intro { line-height: 24px; font-size: 14px; }
+
+/*media styles*/
+@media only screen and (max-height:800px) {
+  .shortcut-links .container { padding: 70px 0 30px; }
+  .home-news .container { padding-top: 40px; }
+}

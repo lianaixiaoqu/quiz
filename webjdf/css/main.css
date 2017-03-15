@@ -1,0 +1,193 @@
+/* 首页 */
+html,body{width:100%;background-color: #F5F4F9;}
+body { font-family: -apple-system-font,Helvetica Neue,Helvetica,Arial,"Microsoft Yahei",sans-serif; overflow-x: hidden; overflow-y: auto; }
+.header{width:100%;}
+.header img{width:100%;}
+.content{margin-top:15px;background-color: #fff;border-top:1px solid #F0EFF0;padding-left: 20px;}
+.content a{border-bottom:1px solid #F0EFF0;height:50px;width:100%;line-height:50px;}
+.content a i{line-height:53px;margin-right: 20px;font-size:30px;float:left;color:#3680DF;}
+.content a span{font-size: 16px;color:#515151;}
+.content a .img-one{margin-top: 2px;margin-right:25px;margin-left: 3px;}
+.content a .img-two{margin-top: 5px;margin-right: 20px;}
+.help-third{border:none;}
+/* 帮助 */
+.main{background-color:#fff;margin-top: 15px;border-top:1px solid #F0EFF0;}
+.main p{border-bottom: 1px solid #F0EFF0;margin:0;margin-left:25px;font-size:16px;padding:15px 20px 15px 0;color:black;}
+.main .main-p-second{padding-left: 20px;}
+.main .main-p-first{font-weight: bold;color:black;}
+
+
+/* 知识微答*/
+.top-dashed{width:96%;margin:0 auto;padding: 10px;margin-top:20px;border:4px dashed #FF9F00;}
+.top-dashed-cumulative{font-size:16px;}
+.top-dashed-cumulative span{padding:0 5px 0 10px;}
+.top-dashed p{margin-bottom:5px;}
+.orange-span{color:#FF9F00;padding:0 15px 0 10px;}
+.no-margin{margin-bottom: 0px;}
+.down-star{width:96%;margin:0 auto;padding-bottom:80px;}
+.star-checkpoint{margin-top:15px;position:relative;float:left;width:25%;}
+.star-checkpoint img{width:92%;}
+.star-checkpoint .img1{margin-left:2.8%;}
+.star-number{position:absolute;width:100%;top:0;left:0;}
+.star-one{float:left;width:92%;text-align: center; font-size:30px;color:#fff;}
+.star-two{margin-left:4%;}
+/* 知识微答说明 */
+.answer-picture{width:100%;height:100%;}
+.answer-picture img{width:100%;height:100%;position: relative;}
+.persona-information{position: absolute;top:25%;color:#fff;font-size:24px;font-weight: bold;margin:0;width:100%;text-align: center;}
+.total-clearance{position: absolute;top:37%;left:21%;color:#f00;font-weight: bold;font-size: 24px;margin:0;}
+.clearance-number{position: absolute;top:42%;left:21%;color:#f00;font-weight: bold;font-size: 24px;margin:0;}
+.see-button{position:absolute;top:67%;left:0;width:100%;padding-left:12%;}
+.see-button a{background-color:#FF6647;width:40%;line-height:40px;border:none;color:#fff;border-radius:5px;margin-right:20px;font-size:16px;}
+.start-through{position:absolute;top:84%;left:0;width:100%;}
+.start-through a{width:90%;line-height:60px;margin-left:5%;background-color:#FF7023;border:none;color:#fff;font-size:28px;border-radius:7px;box-shadow:0px 3px 0px 0px grey; }
+/* 微信答题提交 */
+.top-dashed-continue{background-color:#F6F4F8;width:90%;margin-bottom:10px;position:relative;}
+.top-dashed-continue img{width:15%;position:absolute;bottom:0;right:0;}
+.black-top-dashed{background-color:#F6F4F8;width:90%;margin-bottom:10px;border:4px dashed #282D34;position:relative;}
+.black-top-dashed img{width:15%;position:absolute;bottom:0;right:0;}
+.start-answer{padding-bottom: 80px;margin-top:10px;}
+.start-answer .yes{margin-right:20px;}
+.first-question{padding-top:10px;background-color: #fff;border-bottom:1px solid #EDEBEA;margin-bottom:15px;border-top:1px solid #EDEBEA;position:relative;}
+.first-question .radio-question{padding:0 15% 0 5%;line-height: 30px;border-bottom:1px solid #F2F0EF;}
+.first-question .question-option1{margin-left: 5%;border-bottom:1px solid #F2F0EF;}
+.question-option1 label{font-weight:500;}
+.question-option2 label{font-weight: 500;}
+.first-question .question-option2{margin-left: 5%;}
+
+
+.second-question{padding-top:10px;background-color: #fff;border-bottom:1px solid #EDEBEA;margin-bottom:15px;border-top:1px solid #EDEBEA;border:1px solid #f00;position:relative;}
+.second-question img{width:15%;position:absolute;top:0;right:0;}
+.img-str{width:15%;position:absolute;top:0;right:0;	}
+.second-question .radio-question{padding:0 15% 0 5%;line-height: 30px;border-bottom:1px solid #F2F0EF;}
+.second-question .question-option1{margin-left: 5%;border-bottom:1px solid #F2F0EF;}
+.second-question .question-option2{margin-left: 5%;}
+.right-key{color:#36984B;font-weight:bold;padding-left: 5%;}
+.start-through1{width:100%;background-color: #fff;position: fixed;bottom:0;box-shadow:0 0 5px 0 grey;}
+.start-through1 button{width:45%;height:60px;background-color:#ff9023;border:none;color:#fff;font-size: 20px;border-radius: 7px;box-shadow:0 3px 0 0 grey;}
+.wechat-top-dashed p{background-color:#F6F4F8;width:90%;margin-bottom:10px;font-size: 16px;}
+.correct-rate{margin:0;}
+.modal-dialog-outside{padding-top:20%;}
+.all-success{text-align:center;padding-left:0;}
+.clearance-awards{text-align:center;padding-left:0;}
+.return-page{margin:0 auto;}
+.modal-inside .return-page a{float: left;width:90%;height:60px;background-color: #ff9023;font-size: 20px;border-radius: 7px;color:#fff;line-height: 35px;text-align: center;margin-left: 5%;text-decoration: none;}
+.modal-inside .prompt-language{padding:0 10px;margin-bottom:25px;font-size:18px;}
+.continue-btn{color:#fff;float: left;width:45%;line-height:60px;text-align: center;text-decoration:none !important;background-color: #ff9023;border-radius: 7px;font-size: 18px;box-shadow:0 3px 0 0 #FF6F23;}
+.continue-btn:hover{color:#fff;}
+.continue-bbb{color:#fff;float:left;width:100%;line-height:60px;text-align: center;text-decoration:none !important;background-color: #ff9023;border-radius: 7px;font-size: 18px;box-shadow:0 3px 0 0 #FF6F23;}
+.start-through1 .continue-btn-next{color:#fff;float:left;width:100%;line-height:60px;text-align: center;text-decoration:none !important;background-color: #ff9023;border-radius: 7px;font-size: 18px;box-shadow:0 3px 0 0 #FF6F23;}
+
+
+
+
+/* 闯关成功 ////闯关失败*/
+.start-through2{width:100%;background-color: #fff;position: fixed;bottom:0;box-shadow:0 0 5px 0 grey;padding:10px 5%;}
+.start-through2 button{width:47%;height:53px;background-color:#FFA249;border:none;color:#fff;font-size:20px;border-radius: 7px;box-shadow:0 3px 0 0 #FF6F23;}
+.start-through2 .luck-draw{margin-right:10px;}
+/* 答题获得抽奖 //////// 答题成功*/
+.modal-inside{background-color:#FFF2C5;color:#EB7D36;width:75%;margin:0 auto;border-radius: 6px;height:240px;padding-top:80px;position: relative;}
+.modal-inside p{font-size:18px;font-weight:bold;padding-left: 5%;margin:0;}
+.modal-inside .once-congratulations{margin-bottom: 20px;margin-top:5px;}
+.modal-inside button{background-color:#FEA853;border:none;color:#fff;width:40%;height:50px;margin-left:5%;border-radius: 6px;font-size:18px;}
+.modal-inside a{background-color:#FEA853;border:none;color:#fff;margin-left:5%;border-radius: 6px;font-size:18px;text-decoration:none;width:40%;height:50px;float: left;text-align: center;line-height:50px;}
+.modal-inside img{width:120%;position:absolute;top:-10%;left:-10%;height:70px;}
+.modal-inside .words{color:#fff;position:absolute;top:-10%;left:-10%;margin:0;padding:0;width:120%;text-align: center;line-height: 54px;font-size:22px;}
+.luck-draw{width:47%;height:53px;background-color:#FFA249;border:none;color:#fff;font-size:20px;border-radius: 7px;box-shadow:0 3px 0 0 #FF6F23;line-height: 60px;text-align: center;float:left;}
+.submit-outside-div{padding: 10px 5%;}
+.luck-continue{margin-left: 5%;}
+
+
+/* 个人排名 */
+.personal{background-color:#FFF2C5;width:94%;margin:0 auto;position:relative;padding-top:35px;margin-top:50px;padding-bottom:100px;}
+.personal .img-personal{width:106%;position:absolute;top:-30px;left:-3%;height:60px;}
+.personal table{width:100%;text-align: center;z-index:80;font-weight: bold;}
+.personal table tr td{height:40px;box-shadow:0px 2px 1px 1px #fff;}
+.personal table tbody tr:nth-child(odd){background-color:#FFCC66;color:#B84700;}
+.personal table tbody tr:nth-child(even){background-color:#FFF2C5;color:#B84700;}
+.personal table tr:first-child { background-color:#EA7A32;color:#fff; }
+.personal table tbody tr .img-td{width:10%;}
+.img-td img{width:23px;}
+.first-one{border:3px dashed #FF6000;font-size:16px;text-shadow:0px 2px 1px #fff,2px 0px 1px #fff,-2px 0px 1px #fff,0px -2px 1px #fff;}
+.pensonal-information{position:absolute;top:-30px;left:0;width:100%;text-align: center;line-height:50px;color:#fff;font-size:20px;}
+.two-picture{position: relative;}
+.knowledge-picture{position:relative;width:100%;text-align: left;padding-left: 5px;}
+.star-knowledge{width:35px;position:absolute;top:-26px;right:-14px;}
+.img-td .personal-crown{width:28px;position:absolute;top:-22px;left:-8px;z-index: 99;}
+.search-center{width:100%;background-color: #F5F4F9;position:fixed;bottom:0px;}
+.search-center a{width:90%;height:60px;float:left;margin:10px 5%;background-color:#FEA853;border:none;color:#fff;font-size: 20px;border-radius: 7px;box-shadow:0 3px 0 0 #EA7932;text-align: center;line-height: 60px;text-decoration: none;}
+.love{background-image:url(../images/img.png);background-repeat:no-repeat;background-position:3px 7px;display:inline-block;width:30px;height:30px;background-size: 25px;}
+.love2{width:22px;background-image:url(../images/img.png);background-repeat:no-repeat;background-position:3px -23px;display:inline-block;width:30px;height:30px;background-size: 25px;}
+.ave{width:24%;}
+/* 中心排名 */
+.top-dashed-center{background-color:#F6F4F8;width:96%;margin-bottom:10px;font-size:16px;}
+.first-people{margin:0;}
+.average{padding:5px 0;width:20%;}
+.nonber-one{width:23px;}
+/* 转盘 */
+.turntable-body{margin-top:30px;}
+.turnplate{background-image:url(../images/turnplate-bg.png);background-size:100% 100%;background-position-y: -3px;}
+.turntable-modal{padding-top:50%;}
+.once-turntable{text-align:center;margin-bottom:50px;}
+.disk-play-tips-cs-parent{width:100%;}
+.disk-play-tips-cs{width:90%;margin:0 auto;font-size: 16px;font-weight: bold;color: #40454D;border:4px dashed #ff7023; border-style: dashed;padding:8px;}
+.turntable-body .banner .turnplate img.pointer{width:32.5%;left:33.6%;}
+.index-continue{padding-top: 20px;}
+/* 进度条 */
+.progress-bar-yellow{width:100%;padding:20px 10px 10px;}
+.inside-progress-bar{ overflow: hidden;width: 60%;background-color: #E2E1E6;height: 40px;border-radius: 30px;margin-left: 10px;}
+.residual-time{line-height: 40px;font-size:18px;margin-right: 20px;font-weight: bold;}
+.outside-div{width:100%;background-color: #ff9023;height: 40px;border-radius: 30px;}
+.main_mune{position: fixed;top:0;background-color: #f5f4f9;width:100%;z-index: 100;}
+.submit_form{margin-top:110px;}
+/*页面修改*/
+.main .not-bold{font-weight: 500;}
+.main .size-small{font-size: 12px;}
+.copy-right{position:fixed;bottom: 0;width:100%;text-align: center;left:0;}
+.modal-inside .index-back{width:90%;margin-top: 20px;}
+.three{position: relative;top:-5px;}
+.cumulative-star{margin-left:20px;}
+.right-question{margin-left:30px;}
+.modal-inside .return-page .back_index{line-height: 60px;}
+.suspension-btn{width:100%;height:70px;position: fixed;bottom:0;background-color: #fff;box-shadow:-1px 0px 0px 0px grey;z-index: 100;}
+.suspension-btn span{line-height: 70px;font-size:20px;float: left;width:60%;text-align: center;color:#FF9B81;}
+.suspension-btn a{float: right;width:30%;text-align: center;height:50px;background-color: #FF9B81;color: #fff;line-height:50px;margin-top: 10px;margin-right: 10%;border-radius: 5px;text-decoration: none;font-size: 18px;}
+.next-answer{float:right;width:45%;line-height: 60px;background-color: #FF9B81;border: none; color: #fff;font-size: 20px; border-radius: 7px;box-shadow: 0 3px 0 0 grey;text-align: center;text-decoration: none;}
+.relax-one{float:right;width:100%;line-height: 60px;background-color: #FF9B81;border: none; color: #fff;font-size: 20px; border-radius: 7px;box-shadow: 0 3px 0 0 grey;text-align: center;text-decoration: none;margin-top: 10px;}
+.back_disk{width:100%;}
+.back_disk a{float:left;width:90%;line-height: 60px;background-color: #FF9B81;border: none; color: #fff;font-size: 20px; border-radius: 7px;box-shadow: 0 3px 0 0 grey;text-align: center;text-decoration: none;margin:10px 0 0 5%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

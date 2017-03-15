@@ -1,0 +1,31 @@
+/*
+	Stylesheet for Tigra Calendar v5.0
+	Product is Public Domain (Free for any kind of applicaiton, customization and derivative works are allowed) 
+	URL: http://www.softcomplex.com/products/tigra_calendar/
+
+	- all image paths are relative to path of stylesheet
+	- the styles below can be moved into the document or in existing stylesheet
+
+*/
+/* input box in default state */ 
+#tcal { position: absolute; visibility: hidden; z-index: 100; width: 246px; margin-top: 8px; padding-bottom: 8px; border: 1px solid #c8c8c9; background: #FFF url(../images/calendarBg.gif) no-repeat center bottom; -moz-box-shadow: 3px 3px 4px silver; -webkit-box-shadow: 3px 3px 4px silver; box-shadow: 3px 3px 4px silver; -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='silver')"; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='silver');
+}
+/* table containing navigation and current month */
+#tcalControls { border-collapse: collapse; width: 100%; height: 40px; border-bottom: 1px solid #c8c8c9; background-color: #f1f1f1; }
+#tcalControls td { border-collapse: collapse; padding: 0; width: 35px; background-position: 50% 50%; background-repeat: no-repeat; cursor: pointer; }
+#tcalControls td#tcalPrevMonth { border-right: 1px solid #c8c8c9; }
+#tcalControls td#tcalNextMonth { border-left: 1px solid #c8c8c9; }
+#tcalControls th { border-collapse: collapse; padding: 0; line-height: 25px; font-size: 16px; color: #6e6e6e; text-align: center; font-family: Tahoma, Geneva, sans-serif; white-space: nowrap; }
+#tcalPrevYear { background-image: url(../images/dateInput/prev_year.gif); }
+#tcalPrevMonth { background-image: url(../images/dateInput/prev_mon.gif); }
+#tcalNextMonth { background-image: url(../images/dateInput/next_mon.gif); }
+#tcalNextYear { background-image: url(../images/dateInput/next_year.gif); }
+/* table containing week days header and calendar grid */
+#tcalGrid { width: 210px; margin: 6px 18px; }
+#tcalGrid th { height: 22px; line-height: 22px; text-align: center; font-size: 12px; color: #38383b; }
+#tcalGrid td { height: 22px; line-height: 22px; border: 0; border-radius: 4px; text-align: center; font-family: Tahoma, Geneva, sans-serif; width: 14%; font-size: 11px; cursor: pointer; }
+#tcalGrid td:hover, #tcalGrid td.tcalWeekend:hover { background-color: #e7e7e7; }
+#tcalGrid td.tcalOtherMonth { color: #A6A3A7; }
+#tcalGrid td.tcalWeekend { color: #FFF; background-color: #5083d7; }
+#tcalGrid td.tcalToday { font-weight: bold; color: #454647; background-color: #d6d6d6; }
+#tcalGrid td.tcalSelected { color: #454647; background-color: #d6d6d6; }

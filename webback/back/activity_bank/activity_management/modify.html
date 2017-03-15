@@ -1,0 +1,125 @@
+ <script src='../../js/redirect.js'></script>
+<!-- page content -->
+<div class="content-price-manage" role="main">
+
+<div class="clearfix"></div>
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel top-change">
+      <div class="x_title clearfix">
+        <h2 class="width-auto">活动管理编辑<small>（一旦活动开始，建议不要改变设置）</small></h2>
+          <div class="col-md-5 col-sm-5 col-xs-12 pull-right">
+            <div class="pull-right">
+                <a href="javascript:;" data-history="back" class="btn btn-default" type="button"><i class="fa fa-undo" aria-hidden="true"></i>返回列表</a>
+            </div>
+          </div>
+      </div>
+      <div class="x_content">
+        <br/>
+        <form id="submit-form" data-parsley-validate class="form-horizontal form-label-left">
+          <input type="hidden" value name="id">
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">活动名称</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input required id="phone" class="form-control col-md-7 col-xs-12 user-read name" type="text" name="name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">活动说明</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input required id="phone" class="form-control col-md-7 col-xs-12 user-read description" type="text" name="description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">开始时间</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input required id="startTime" class="form-control col-md-7 col-xs-12 user-read startTime datepicker" placeholder="请选择日期" type="text" name="startTime">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">截止时间</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input required id="endTime" class="form-control col-md-7 col-xs-12 user-read endTime datepicker" placeholder="请选择日期" type="text" name="endTime">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">当天开始时间<small>(HHmmss
+              )</small></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input required id="middle-name" class="form-control col-md-7 col-xs-12 user-read dailyStart" value="080000" type="text" name="dailyStart">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">当天截止时间<small>(HHmmss
+              )</small></label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input required id="middle-name" class="form-control col-md-7 col-xs-12 user-read dailyEnd" value="200000" type="text" name="dailyEnd">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">活动状态<span class="required"></span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <select class="form-control member_sex" name="isCurrent">
+                  <option value="0">请选择活动</option>
+                  <option value="1">当前活动</option>
+                  <option value="0">非当前活动</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">总关卡<small>（正整数）</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input required id="zong-chapter" number="number" class="form-control col-md-7 col-xs-12 user-read chapters" type="text" name="chapters">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">每关卡关数<small>（正整数）</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input required id="every-chapter" number="number" class="form-control col-md-7 col-xs-12 user-read sectionsPerChapter" type="text" name="sectionsPerChapter">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">每关多少问题<small>（正整数）</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input required id="zong-question" number="number" class="form-control col-md-7 col-xs-12 user-read questionsPerSection" type="text" name="questionsPerSection">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">每关限时<small>（s）</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input required id="zong-time" number="number" class="form-control col-md-7 col-xs-12 user-read sectionLimitTime" type="text" name="sectionLimitTime">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">分类<span class="required"></span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <select class="form-control member_sex literature_type" id="classic" name="categories">
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">知识点<span class="required"></span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input type="text" id="cate" name="cate" class="form-control col-md-7 col-xs-12 user-read"/>
+
+              <select class="form-control member_sex knowledge" id="sel_cate"  multiple="multiple" >
+                </select>
+            </div>
+          </div>
+          <div class="ln_solid"></div>
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-5">
+              <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>保存</button>
+               <!-- <a href="javascript:;" data-history="back"  type="button" class="btn btn-primary">取消</a> -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

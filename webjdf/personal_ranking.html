@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+	<title>个人中心排名</title>
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="vendors/jquery/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div class="top-dashed top-dashed-center">
+		<p>我的江湖排名: 第&nbsp;<span class="orange-span selfRank"></span>&nbsp; 名</p>
+		<p style="margin:0;">当天 <span class="day-time">20:00</span>之前，都有机会成为榜首哦</p>
+	</div>
+	<div class="personal">
+		<img src="images/3.1个人排名_02.png" alt="加载失败" class="img-personal">
+		<p class="pensonal-information">个人排名</p>
+		<table>
+			<thead>
+				<tr class="first-tr">
+					<td class="img-td"></td>
+					<td>部门</td>
+					<td>姓名</td>
+					<td>关数</td>
+					<td>星数</td>
+					<td class="ave">点赞</td>
+				</tr>
+			</thead>
+			<tbody class="rank-body">
+            <!--
+				<tr class="second-tr first-one">
+					<td class="img-td">
+						<div class="two-picture">
+				<img src="images/1.png" class="nonber-one">
+				<img src="images/皇冠.png" alt="加载失败" class="personal-crown">
+						</div>
+					</td>
+					<td>B4信管部</td>
+					<td>张三</td>
+					<td>56</td>
+					<td>120</td>
+					<td class="td-td">
+						<div class="knowledge-picture"><i class="one-love love"></i><span class="three">3597</span>
+							<img src="images/知识 榜首.png" class="star-knowledge">
+						</div>
+					</td>
+				</tr>
+				<tr class="third-tr">
+					<td class="img-td"><img src="images/2.png" style="width:23px;"></td>
+					<td>B1信管部</td>
+					<td>李四</td>
+					<td>53</td>
+					<td>110</td>
+					<td  class="td-td"><div class="knowledge-picture"><i class="one-love love"></i><span class="three">267
+					</span></div></td>
+				</tr>
+				<tr class="second-tr">
+					<td class="img-td"><img src="images/3.png" style="width:23px;"></td>
+					<td>成都信管部</td>
+					<td>王五</td>
+					<td>46</td>
+					<td>100</td>
+					<td class="td-td"><div class="knowledge-picture"><i class="one-love love"></i><span class="three">247</span></div></td>
+				</tr>
+				<tr class="third-tr">
+					<td class="img-td"><img src="images/4.png" style="width:23px"></td>
+					<td>CT应用系统部</td>
+					<td>赵刚</td>
+					<td>40</td>
+					<td>98</td>
+					<td  class="td-td"><div class="knowledge-picture"><i class="one-love love"></i><span class="three">167</span></div></td>
+				</tr>
+				<tr class="second-tr">
+					<td class="img-td"><img src="images/5.png" style="width:23px"></td>
+					<td>信息安全部</td>
+					<td>李九</td>
+					<td>35</td>
+					<td>59</td>
+					<td  class="td-td"><div class="knowledge-picture"><i class="one-love love"></i><span class="three">64</span></div></td>
+				</tr>
+				-->
+			</tbody>
+		</table>
+	</div>
+	<div class="search-center clearfix">
+		<a href="center_ranking.html">查看中心排名</a>
+	</div>
+	<script src="js/tmpl.js"></script>
+	<script src="js/common.js"></script>
+	<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		/*function sort (arr,key,nextKey,third,forth) {
+			if(key.sortkey == 'asc'){
+				for (var i = 0;i<arr.length;i++) {
+					for (var j = 0; j < arr.length-i-1; j++) {
+						if (arr[j][key.key] > arr[j+1][key.key]) {
+							var temp = arr[j];
+							arr[j] = arr[j+1];
+							arr[j+1] = temp;
+						} else if (arr[j][key.key] == arr[j+1][key.key]) {
+							var temp = sort([arr[j],arr[j+1]],nextKey,third,forth);
+							arr[j] = temp[0]
+							arr[j+1] = temp[1];
+						}
+					}
+				}
+			} else {
+
+				for (var i = 0;i<arr.length;i++) {
+					for (var j = 0; j < arr.length-i-1; j++) {
+						if (arr[j][key.key] < arr[j+1][key.key]) {
+							var temp = arr[j];
+							arr[j] = arr[j+1];
+							arr[j+1] = temp;
+						} else if (arr[j][key.key] == arr[j+1][key.key]) {
+							var temp = sort([arr[j],arr[j+1]],nextKey,third,forth);
+							arr[j] = temp[0]
+							arr[j+1] = temp[1];
+						}
+					}
+				}
+			}
+			return arr;
+		}   
+		function rnd(n, m){
+			var random = Math.floor(Math.random()*(m-n+1)+n);
+			return random;
+		}*/
+		
+		$.ajax({
+			type:'GET',
+			dataType:'json',
+			url: dataUrl + '/rank/person?page=0&activityId=1&userId='+localStorage.userId,
+			data:{},
+		}).then(function(data){
+			$('.selfRank').text(data.data.selfRank);
+			var arr = data.data.rank ;
+			//for (var q = 0; q < arr.length ; q++) {
+			//	arr.push({userId:rnd(1,1000),star:rnd(1,1000),stage:rnd(1,1000),times:rnd(1,1000),depart: 'aa'})
+			//}
+		 	//arr = sort (arr,{key:'stage',sortkey:'dsc'},{key:'star',sortkey:'dsc'},{key:'times',sortkey:'asc'},{key:'totalTime',sortkey:'asc'});
+		 	//var images = {0:'images/1.png',1: 'images/2.png',1: 'images/3.png',5: 'images/3.png'};
+		 	var tr = '';
+		 	for (var i = 0; i < arr.length; i++) {
+
+		 		var loveStatus = "";
+		 		if ( arr[i].status == 0 ) {
+		 			loveStatus = '<i class="one-love love2" ></i>';
+		 		}  else {
+		 			loveStatus = '<i class="one-love love" ></i>';
+		 		}
+
+		 		tr += '<tr '+ (i==0?'class="first-one"':'') +'>\
+							<td class="img-td"><div class="two-picture"><img src="images/'+ (i==0?1:i==1?2:i==2?3:4) +'.png" style="width:23px">' + (i===0?'<img src="images/皇冠.png" alt="加载失败" class="personal-crown">':'') + '</div></td>\
+							<td>'+ arr[i].departmentname +'</td>\
+							<td>'+ arr[i].username +'</td>\
+							<td>'+ arr[i].sectioncnt +'</td>\
+							<td>'+ arr[i].stars +'</td>\
+							<td><div class="knowledge-picture "  data-targetId = "'+arr[i].userid+'" > ' + (i===0?'<img src="images/知识 榜首.png" alt="加载失败" class="star-knowledge">':'') + loveStatus +'<span class="three">'+arr[i].like +'</span> </div></td>\
+						</tr>'
+		 	}
+			$('.rank-body').html(tr);
+			//var dataPenson = data.data.info.ranks;
+			//$('.orange-span').text(data.data.info.myRank);
+			//$('.day-time').text(data.data.info.dailyEnd);
+			$('.one-love').click(function(){
+				var _this = $(this);
+				var targetId = _this.parent().attr('data-targetId');
+				$.ajax({
+					type:'post',
+					dataType:'json',
+					url: dataUrl + '/ranklike',
+					data:{activityId:1,userId:localStorage.userId,targetId:targetId,likeType:0},
+				}).then(function(data){
+					$(_this).toggleClass('love love2');
+					if($(_this).hasClass('love')){
+						var shuzi=Number($(_this).siblings('span').text())+1;
+						$(_this).siblings('span').text(shuzi);
+					}else if($(_this).hasClass('love2')){
+						var shuzi=Number($(_this).siblings('span').text())-1;
+						$(_this).siblings('span').text(shuzi);
+					}
+				})
+				
+			})
+		});
+
+		// http://localhost:8080/ranklike?activityId=1&userId=2&targetId=1&likeType=0
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+	<title>知识微答说明</title>
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="vendors/jquery/jquery-1.11.3.min.js"></script>
+	<style>
+		body,html{height:100%;}
+	</style>
+</head>
+<body>
+	<div class="answer-picture">
+		<img src="images/2.1知识微答说明_02.png" alt="加载失败">
+		<p class="persona-information">英雄成就</p>
+		<p class="total-clearance">总比试关数: <span class="totalSections"></span></p>
+		<p class="clearance-number">累计已比试关数: <span class="havePass"></span></p>
+		<div class="see-button">
+			<a href = 'personal_ranking.html'  role="button" class="btn">查看江湖地位</a>
+			<a href="help.html" class="btn">查看江湖规矩</a>
+		</div>
+		<div class="start-through">
+			<a href="knowledge-answer.html" class="btn start-answer-b">开始闯关</a>
+		</div>
+	</div>
+	<script src="js/tmpl.js"></script>
+	<script src="js/common.js"></script>
+	<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		$.ajax({
+			type:'GET',
+			dataType:'json',
+			url: dataUrl + '/person/info?userId='+localStorage.userId+'&activityId=1',
+			data:{},
+		}).then(function(data){
+			if(data.code == "success"){
+				$('.totalSections').text(data.data.info.totalSections);
+				$('.havePass').text(data.data.info.havePass);
+			}else if(data.code == "notLogin"){
+				alert(data.msg);
+				location.href = 'index.html?userId='+localStorage.userId+'';
+			}else{
+				alert(data.msg);
+				location.href = 'index.html?userId='+localStorage.userId+'';
+			}
+		});
+	</script>
+</body>
+</html>

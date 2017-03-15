@@ -1,0 +1,32 @@
+.store-img-select { margin-bottom: 20px; }
+.store-gallery, .store-gallery .item, .store-gallery .item img { width: 480px; height: 360px; background-color: #000; }
+.store-thumbnail { width: 480px; height: 90px; padding: 2px 26px; background-color: #000; }
+.store-thumbnail .item { position: relative; padding: 0 2px; }
+.store-thumbnail .item img { width: 115px; height: 86px; }
+.store-thumbnail .item .cover { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .7); }
+.store-thumbnail .item.is-nav-selected .cover { display: none; }
+.store-thumbnail .flickity-prev-next-button { width: 24px; height: 86px; border-radius: 0; background-color: #535353; }
+.store-thumbnail .flickity-prev-next-button.previous { left: 0; }
+.store-thumbnail .flickity-prev-next-button.next { right: 0; }
+.store-thumbnail .flickity-prev-next-button .arrow { fill: #fff; }
+.store-intro { padding: 10px 0 0 50px; }
+.store-intro-list li { line-height: 24px; padding: 8px 0 8px 22px; }
+.store-intro .offer-status { margin-bottom: 32px; font-weight: bold; }
+.store-intro .offer-status .num { padding: 0 8px; font-size: 24px; }
+.store-intro .offer-status .status { margin-left: 50px; }
+.store-intro .offer-status .status b { padding: 0 8px; font-size: 24px; color: #027c2e; }
+.store-intro .btn-groups { margin-top: 32px; }
+.store-intro .offer-btn { width: 200px; margin-right: 40px; }
+.store-intro .like { color: #d9534f; }
+.store-offer-intro { padding-bottom: 16px; }
+.store-offer-intro .img { margin-right: 40px; text-align: right; }
+.store-offer-intro .intro p { line-height: 24px; padding: 4px 0 4px 22px; background: url("../../images/dot5x5.png") no-repeat left 14px; }
+.deadline { margin-top: 20px; font-size: 14px; color: #46b8da; }
+.deadline .fa { display: inline-block; margin: -4px 8px 0 0; vertical-align: middle; }
+.deadline .num { font-size: 18px; color: #d9534f; }
+.offer-history-list { background-color: #fff; }
+.offer-history-list th { text-align: center; font-size: 14px; font-weight: normal; background-color: #fff; }
+.offer-history-list td { text-align: center; font-size: 14px; }
+.offer-history-list .time { padding-left: 50px; text-align: left; }
+.offer-history-list .price { font-weight: bold; color: #ea6d36; }
+.offer-history-list .success { font-weight: bold; color: #027c2e; }

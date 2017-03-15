@@ -1,0 +1,46 @@
+group 'com.hzbuvi'
+version '1.0-SNAPSHOT'
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+//apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.4.0.RELEASE'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    compile fileTree(dir: '../lib',include:['*.jar'] )
+//    compile group: 'com.oracle', name: 'ojdbc6', version: '11.1.0.7.0'
+   compile project(':m-activity')
+    compile project(':m-chapter')
+    compile project(':m-section')
+    compile project(':m-question-bank')
+    compile project(':m-questionsheet')
+    compile project(':m-prize')
+    compile project(':m-like')
+//    compile project(':m-individualRanking')
+    compile project(':m-organization')
+//    compile project(':m-centerRanking')
+    compile project(':m-backUser')
+//    compile project(':api-quiz-biz')
+    compile project(':m-user-section')
+
+}

@@ -1,0 +1,113 @@
+@charset "utf-8";
+@import url("ionic_form.css");
+
+/* CSS Document */
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-touch-callout: none; }
+html, body { font-family: sans-serif; font-size: 14px; color: #666; background-color: #ebebeb; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form { margin: 0; }
+ol, ul, textarea { margin: 0; padding: 0; }
+body { line-height: normal !important; }
+dl, dt, dd, ul, ol, li { list-style-type: none; }
+h5, h6 { font-size: 100%; font-weight: normal; }
+address, caption, cite, code, dfn, em, th, var { font-style: normal; font-weight: 500; }
+select, input { font-size: 14px; vertical-align: middle; _vertical-align: baseline; outline: none; }
+input { padding: 0; border-radius: 0; -webkit-appearance: none; }
+input[type="checkbox"] { -webkit-appearance: checkbox; }
+input[type="radio"] { -webkit-appearance: radio; }
+textarea { resize: none; outline: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: none; }
+a { color: #666; text-decoration: none; }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; }
+audio:not([controls]) { display: none; }
+input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner { border: none; padding: 0; }
+
+/* 1.去除android a/button/input标签被点击时产生的边框 2.去除ios a标签被点击时产生的半透明灰色背景 */
+a, button, input { -webkit-tap-highlight-color: rgba(255, 0, 0, 0); }
+
+/*firefox input text-align center*/
+.clearfix:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
+.clearfix { zoom: 1; }
+
+/*
+**styles reset end && page style begin**
+*/
+
+/*tab control style*/
+.tab-ctrl-content .tab-content { display: none; }
+.tab-ctrl-content .tab-content:first-child { display: block; }
+.select-tag { display: -moz-box; display: -webkit-box; display: box; margin-bottom: 1px; }
+.select-tag li { -moz-box-flex: 1; -webkit-box-flex: 1; box-flex: 1; width: 100%; padding: 12px 0; border-bottom: 2px solid transparent; text-align: center; font-size: 14px; color: #808080; }
+.select-tag li.item { border: none; }
+.select-tag li.active { border-bottom: 2px solid #47b87f; font-weight: bold; color: #47b87f; }
+
+/*form list style*/
+.form-list .list { padding: 0 16px; border-bottom: 1px solid #d7d7d7; background-color: #fff; }
+.form-list .item { padding-left: 4px; margin: 0; border: none; border-bottom: 1px solid #d7d7d7; }
+.form-list .item .input-label { font-size: 14px; }
+.form-list .list .item:last-child { border-bottom: none; }
+.form-list .input-label.long { width: 44%; }
+.form-list .input-label.long ~ select, .form-list .input-label.long ~ input { width: 56%; }
+.form-list .input-label.required:after { margin-left: 2px; content: '*'; color: #f00; }
+.nopd { padding-right: 16px; background-color: #fff; }
+.nopd .input-label { margin-bottom: 8px; font-size: 13px; }
+.nopd textarea { padding: 0; }
+
+/*product style*/
+.product-banner { height: 280px; }
+.product-banner li { height: 280px; overflow: hidden; }
+.product-banner li img { width: 100%; height: 280px; }
+.product-panel { line-height: 26px; padding: 8px 16px; background-color: #fff; }
+.product-panel .title { margin-bottom: 8px; color: #222; }
+.product-panel .price { margin-right: 8px; font-size: 20px; color: #d52e01; }
+.product-panel .small { font-size: 12px; color: #999; }
+.product-panel .box .tag { float: left; width: 100px; }
+.product-panel .box .info { padding-left: 100px; color: #222; }
+.product-panel .tag-title { padding-left: 10px; margin-bottom: 12px; border-left: 2px solid #47b87f; }
+.nav-bar { position: fixed; bottom: 0; left: 0; width: 100%; height: 44px; }
+.nav-bar .btn { border-radius: 0; }
+
+/*shelves style*/
+.shelves-list li { float: left; width: 50%; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; background-color: #fff; }
+.shelves-list li .box { display: block; position: relative; width: 100%; }
+.shelves-list li .img { height: 140px; margin-bottom: 8px; text-align: center; }
+.shelves-list li .img img { max-width: 100%; max-height: 140px; }
+.shelves-list li .info { padding: 6px 10px; color: #666; }
+.shelves-list li .info .name { margin-bottom: 6px; font-weight: bold; color: #333; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.shelves-list li .info p { line-height: 20px; }
+.shelves-list li .info .time { font-size: 12px; }
+.shelves-list li:nth-child(even) { border-right: none; }
+
+/*btn style*/
+.btn-group { padding: 16px; }
+.btn-group .w50pBtns { margin: 0 -2%; }
+.w50pBtns .btn { float: left; width: 46%; margin: 0 2%; }
+.btn { display: inline-block; margin-bottom: 0; font-weight: normal; text-align: center; vertical-align: middle; touch-action: manipulation; cursor: pointer; background-image: none; border: 1px solid transparent; white-space: nowrap; padding: 10px 12px; font-size: 16px; line-height: 1.42857143; border-radius: 4px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.btn-block + .btn-block { margin-top: 8px; }
+.btn-block { display: block; width: 100%; }
+.btn-cyan, .btn-cyan:hover, .btn-cyan:active, .btn-cyan:visited { color: #fff; background-color: #47b87f; }
+
+/*banner styles*/
+.swiper-pagination-bullet { background: #47b87f; }
+.swiper-pagination-bullet-active { opacity: 1; background-color: #47b87f; }
+
+/*
+**page style end && class reset begin**
+*/
+.hide { display: none; }
+.show { display: block; }
+.bfL { float: left; }
+.bfR { float: right; }
+.pb44 { padding-bottom: 44px; }
+.mt8 { margin-top: 8px; }
+.mt14 { margin-top: 14px; }
+.txtL { text-align: left; }
+.txtC { text-align: center; }
+.txtR { text-align: right; }
+
+/*
+**class reset end**
+*/

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+	<title>首页</title>
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="vendors/jquery/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div class="header">
+		<img src="images/index.png" alt="加载失败">
+	</div>
+	<div class="content clearfix">
+		<a href="knowledge_micro_answer.html" class="pull-left knowledge-answer"><i class="fa fa-pencil-square-o"></i><span class="pull-left">知识微答</span></a>
+		<a href="personal_ranking.html" class="pull-left rank_person"><img src="images/medal.png" alt="加载失败" class="pull-left img-one"><span class="pull-left">微排名</span></a>
+		<a href="help.html" class="pull-left help-third"><img src="images/help.png" alt="加载失败" class="pull-left img-two"><span class="pull-left">帮助</span></a>
+		<div class="text-center copy-right">
+			<i class="fa fa-copyright" aria-hidden="true"></i>
+			<span>CIO组织 版权所有</span>
+		</div>
+	</div>
+	<script src="js/tmpl.js"></script>
+	<script src="js/common.js"></script>
+	<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		localStorage.userId = (location.search.substring(1).split('=')[1]);
+		$.ajax({
+			type:'GET',
+			dataType:'json',
+			url: dataUrl + '/activity?activityId=1',
+		}).then(function(data){
+			if(data.data.check.lock == '0'){
+				$('.knowledge-answer').removeAttr('href');
+				alert('英雄，您来的不是时候啊，请在知识擂台开放时间再来');
+			}
+		})
+		$.ajax({
+			type:'GET',
+			dataType:'json',
+			url: dataUrl + '/activity/checkTime?activityId=1',
+		}).then(function(data){
+			$('.knowledge-answer').click(function(){
+				if(data.data.check.lock == '3'){
+					$('.knowledge-answer').removeAttr('href');
+					$('.rank_person').removeAttr('href');
+					$('.help-third').removeAttr('href');
+					alert('本次活动未进行');
+				}
+			})
+		})
+		$.ajax({
+			type:'GET',
+			dataType:'json',
+			url: dataUrl + '/person/infoReal',
+			data:{userId:localStorage.userId}
+		}).then(function(data){
+			if(data.code == "notLogin"){
+				$('.rank_person').removeAttr('href');
+			}else{
+				$('.rank_person').removeAttr('href');
+			}
+		})
+	</script>
+</body>
+</html>

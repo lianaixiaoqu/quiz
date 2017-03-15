@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+	<title>开始答题</title>
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="vendors/jquery/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<style>
+		.submit-btn[disabled] { opacity: .5 }
+	</style>
+	<div class="main_mune">
+		<div class="progress-bar-yellow clearfix">
+			<div class="inside-progress-bar pull-left">
+				<div class="outside-div"></div>
+			</div>
+			<div class="pull-right residual-time">剩余:	<span class="day_time"></span>秒</div>
+		</div>
+	</div>
+	<form action="" class="submit_form">
+        <input type="hidden" name="historyId">
+		<div class="start-answer">
+
+		</div>
+		<div class="start-through1 submit-outside-div">
+			<button type="button" class="submit-btn" disabled modal-name="#submit">马上提交</button>
+			<a href="knowledge-answer.html" class="next-answer">下次再答</a>
+		</div>
+	</form>
+	<script src="js/tmpl.js"></script>
+	<script src="js/common.js"></script>
+	<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="vendors/art-template/dist/template.js"></script>
+<!-- 	<script type="text/html" id="tmpl">
+	{{each questionArray}}
+	<div class="first-question">
+		<p class="radio-question">{{$value.index}} .【 {{$value.Type}} 】 {{$value.Q}}</p>
+		{{each $value.A}}
+		<p class="question-option1">
+			<label>
+				<input type="{{Type}}" name="{{$index}}" class="yes" value="{{$value}}">
+			</label>
+		</p>
+		{{/each}}
+	</div>
+	{{/each}}
+</script> -->
+
+	<script>
+
+
+
+
+		var answerJson = {  };
+
+		localStorage.sectionId = Number(location.search.substring(1).split('=')[1]);
+		$.ajax({
+			type:'GET',
+			dataType:'json',
+			url:  dataUrl + '/section/question?'+ location.search.substring(1) +'&activityId=1&userId='+localStorage.userId,
+			data:{},
+		}).then(function(data){
+			$('.day_time').text(data.data.sectionLimitTime);
+			time_interval(data.data.sectionLimitTime);
+			var name = data.data.questions;
+			var sheetHistoryId = data.data.historyId;
+			// /*$.each(name,function(k,item){
+			// 	if( item.Type == '单选题' ){
+			// 	 	item.A.Type = 'radio' ;
+			// 	} else {
+			// 		item.A.Type = 'checkbox' ;
+			// 	}
+			// });
+			// name.itemArr={0:'A',1:'B',2:'C',3:'D'};*/
+			var optionArr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N'];
+			var question = '';
+
+
+			$('[name="historyId"]').val(sheetHistoryId);
+
+			for( var i = 0;i<name.length;i++ ){
+				var answersJson = name[i].answers ;
+				var answerText = '';
+			if( name[i].type == 'SingleSelection' ){
+				for( var j = 0;j<answersJson.length;j++ ){
+					answerText +=
+						 ' <p class="question-option1"> '
+						+ '<label>'
+						+ '<input type="radio" name="'+ name[i].sequence + '" class="yes"  value="'+answersJson[j].id+'">'+optionArr[j]+'.'+ answersJson[j].content
+						+ '</label>'
+						+ '</p> '
+			    answerJson['k'+name[i].sequence+'a'+answersJson[j].id] =  optionArr[j] ;
+					}
+				question +=
+					'<div class="first-question">'
+						+'<p class="radio-question">'+ (Number(i)+1) +'.【'+ name[i].typeName +'】'+ name[i].questionContent +'</p>'
+						+answerText
+						+'<p class="right-key ' + name[i].sequence + '"></p>'
+						+'<img src="" class="img-str">'
+			 		+'</div>'
+				}else if( name[i].type == 'MultiSelect' ){
+				for( var j = 0;j<answersJson.length;j++ ){
+					answerText +=
+						 ' <p class="question-option1"> '
+						+ '<label>'
+			 			+ '<input type="checkbox" name="'+ name[i].sequence + '"  class="yes" value="'+answersJson[j].id+'">'+optionArr[j]+'.'+ answersJson[j].content
+						+ '</label>'
+						+ '</p> '
+			    answerJson['k'+name[i].sequence+'a'+answersJson[j].id] =  optionArr[j] ;
+			    // answerJson['k'+answersJson[j].id] =  optionArr[j] ;
+					}
+					question +=
+					'<div class="first-question">'
+			 			+'<p class="radio-question">'+ (Number(i)+1) +'.【'+ name[i].typeName+'】'+ name[i].questionContent +'</p>'
+						+answerText
+						+'<p class="right-key ' + name[i].sequence + '"></p>'
+						+'<img src="" class="img-str">'
+			 		+'</div>'
+			 	}
+			 }
+			$('.start-answer').html(question);
+		})
+		$('.start-answer').on('change','[type="checkbox"],[type="radio"]',function(e){
+			var target = $(this).closest('.first-question');
+			if(target.find(':checked').length > 0){
+				if(!target.hasClass('had-checked')){
+					target.addClass('had-checked');
+					$(e.delegateTarget).attr('q-counter',Number($(e.delegateTarget).attr('q-counter')||0)+1);
+				}
+			} else {
+				target.removeClass('had-checked');
+				$(e.delegateTarget).attr('q-counter',Number($(e.delegateTarget).attr('q-counter')||0)-1);
+			}
+			if($(e.delegateTarget).attr('q-counter') == $('.first-question').length) {
+				$('.submit-btn').prop('disabled',false);
+			} else {
+				$('.submit-btn').prop('disabled',true);
+			}
+		});
+		$('.submit-btn').click(function(){
+			var _this = this;
+			var historyId = $('[name="historyId"]').val();
+ 			$.ajax({
+				type:'post',
+				dataType:'json',
+				url: dataUrl+'/section/commitAnswer',
+				data:'content=' + $('.question-option1').find('input').serialize().replace(/&/g,',') +'&historyId='+historyId+ '&activityId=1&'+ location.search.substring(1) +'&userId='+localStorage.userId
+			}).then(function(data){
+				if(data.code == "timeOut"){
+					alert('不好意思，闯关时中途退出也会计时哦，请遵守江湖规矩冲榜吧~');
+					location.href = "knowledge-answer.html";
+				}else{
+					var dt = data.data.result;
+					var error = data.data.result.errorList;
+					$.each(error,function(key,value){
+				
+						    var correctAnswerJson = '';
+				            for( var i = 0;i<value.correctAnswer.length;i++ ){
+						        var jsonkey = 'k'+value.sequence+'a'+value.correctAnswer[i];
+						        correctAnswerJson += ' '+ answerJson[jsonkey] ;
+						    }
+
+							$('.'+value.sequence).text('正确答案：' + correctAnswerJson );
+							$('.'+value.sequence).next().attr('src','images/2.3.2.2微信答题提交_03.jpg');
+							$('.'+value.sequence).parent().addClass('second-question');
+						
+					});
+
+					if(dt.lock == '1'){
+						var location_split = Number(location.search.substring(1).split('=')[1])+1;
+						$('.main_mune').html('');
+						$('.main_mune').html('<div class="top-dashed top-dashed-continue"><p>本回合分数: <span class="orange-span">'+ dt.score +'</span>分&nbsp;&nbsp;&nbsp;&nbsp;本回合星数: <span class="orange-span">'+ dt.starCount +'星</span></p>\
+							<p class="first-people">正确率: <span class="orange-span">'+ dt.correctRate +'</span></p>\
+							</div>');
+						$('.start-through1').html('');
+						$('.start-through1').html('<a href="submit.html?sectionId=' + location_split + '" class="continue-btn">继续闯关</a><a href="knowledge-answer.html"  class="next-answer">休息一下</a>');
+						clearInterval(_send);
+					}else if(dt.lock == '0'){
+						var location_split = Number(location.search.substring(1).split('=')[1]);
+						$('.main_mune').html('');
+						$('.main_mune').html('<div class="top-dashed top-dashed-continue"><p>本回合分数: <span class="orange-span">'+ dt.score +'</span>分&nbsp;&nbsp;&nbsp;&nbsp;本回合星数: <span class="orange-span">'+ dt.starCount +'星</span></p>\
+							<p class="first-people">正确率: <span class="orange-span">'+ dt.correctRate +'</span></p>\
+							<img src="images/2.3.4微信答题提交重新闯关_03.png" alt="加载失败"></div>');
+						$('.start-through1').html('<a href="knowledge-answer.html" class="continue-btn">重新闯关</a>');
+						clearInterval(_send);
+						modalShow.call(_this,dt);
+					}else if(dt.lock == '3'){
+						$('.main_mune').html('');
+						$('.main_mune').html('<div class="top-dashed top-dashed-continue"><p>本回合分数: <span class="orange-span">'+ dt.score +'</span>分&nbsp;&nbsp;&nbsp;&nbsp;本回合星数: <span class="orange-span">'+ dt.starCount +'星</span></p>\
+							<p class="first-people">正确率: <span class="orange-span">'+ dt.correctRate +'</span></p>\
+							<img src="images/2.3.3微信答题提交抽奖_03.png" alt="加载失败"></div>');
+						clearInterval(_send);
+						modalShow.call(_this,dt);
+
+					}else if(dt.lock == '2'){
+						var location_split = Number(location.search.substring(1).split('=')[1])+1;
+						$('.main_mune').html('');
+						$('.main_mune').html('<div class="top-dashed top-dashed-continue"><p>本回合分数: <span class="orange-span">'+ dt.score +'</span>分&nbsp;&nbsp;&nbsp;&nbsp;本回合星数: <span class="orange-span">'+ dt.starCount +'星</span></p>\
+							<p class="first-people">正确率: <span class="orange-span">'+ dt.correctRate +'</span></p>\
+							</div>');
+						$('.start-through1').html('');
+						$('.start-through1').html('<a href="submit.html?sectionId=' + location_split + '" class="continue-bbb">继续闯关</a>');
+						clearInterval(_send);
+					}else if(dt.lock == '4'){
+						
+						clearInterval(_send);
+						modalShow.call(_this,dt);
+					}
+				}
+			});
+		});
+		
+		function time_interval(time){
+			var old = time;
+			var timeElem = $('.day_time');
+			var outside = $('.outside-div');
+			var prefix = (function (){
+			    var prefix = '';
+			    ['webkit','moz'].forEach(function(v){
+			        if(typeof document[v + 'Hidden'] != 'undefined'){
+			            prefix = v;
+			        }
+			    });
+			    return prefix;
+			})();
+
+			var timeStamp = '';
+			function calcTime(e){
+			    if( document[prefix + 'Hidden'] || document.hidden ){
+			        timeStamp = +new Date();
+			    } else {
+			        timeStamp = Math.floor((+new Date() - timeStamp)/1000);
+			        time = time - timeStamp;
+			        if(time<0){ time = 0; }
+			    }
+			}
+			document.addEventListener( prefix + 'visibilitychange',calcTime);
+			function timer(){
+				if(time <= -1){
+					clearInterval(_send);
+					var modalStr = '<div class="modal fade" id="submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\
+						  <div class="modal-dialog turntable-modal modal-dialog-outside">\
+						        <div class="modal-inside">\
+						    	<p class="once-congratulations text-center">英雄您手慢了！再来一次试试</p>\
+						    	<img src="images/2.3.1.1微信答题抽奖_03.png" alt="加载失败">\
+						    	<p class="words">很遗憾！</p>\
+						    	<div>\
+						    		<a href="knowledge-answer.html" class="back-index index-back">返回首页</a>\
+						    	</div>\
+						    </div>\
+						  </div>\
+						</div>';
+						setTimeout(function(){
+							$(modalStr).appendTo('body').modal('show').on('hidden.bs.modal',function(){
+
+								location.href = "knowledge-answer.html";
+							});
+
+						});
+
+				} else {
+					timeElem.text(time--);
+					outside.css('width',time/old*100 + '%')
+				}
+
+			}
+			window._send = setInterval(timer,1000);
+		}
+	</script>
+</body>
+</html>

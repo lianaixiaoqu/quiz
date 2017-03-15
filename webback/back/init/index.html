@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>竞赛管理系统</title>
+    <!-- Bootstrap -->
+    <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="../../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="../../vendors/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    <!-- jVectorMap -->
+    <link href="../../css/maps/jquery-jvectormap-2.0.3.css" rel="stylesheet"/>
+    
+    <!-- Custom Theme Style -->
+    <link href="../../css/custom.css" rel="stylesheet">
+    <!-- requirejs -->
+    <script src="../../vendors/requirejs/require.min.js" data-main="../../js/main" async defer></script>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body main-container">
+      <div class="main_container h-100p">
+        <div class="col-md-3 left_col h-100p ov-auto">
+          <div class="left_col scroll-view">
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="../../images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <h2 class="userName"></h2>
+                <span>欢迎登录知识竞赛信息化管理系统</span>
+                <!-- <h2>John Doe</h2> -->
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+            <br/>
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <!-- <h3>General</h3> -->
+                <ul class="nav side-menu">
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i> 用户管理 
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/user_management/user_manage/index.html" data-hash="href">用户管理</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i> 试题库管理 
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/question_bank/question_manage/index.html" data-hash="href">试题管理</a>
+                      </li>
+                      <li>
+                        <a href="#/question_bank/classific_manage/index.html" data-hash="href">分类管理</a>
+                      </li>
+                      <li>
+                        <a href="#/question_bank/knowledge_manage/index.html" data-hash="href">知识点管理</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i> 员工管理 
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/staff_bank/staff_management/index.html" data-hash="href">员工管理</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i> 机构管理 
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/mechanism_bank/organizational_management/index.html" data-hash="href">机构管理</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i> 活动管理 
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/activity_bank/activity_management/index.html" data-hash="href">活动管理</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i> 关卡配置 
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/level_configuration/level_management/detaile.html" data-hash="href">关卡配置</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i> 过关条件配置
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/condition_configuration/condition_configuration/index.html" data-hash="href">过关条件配置</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i> 奖品设置
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/price_configuration/price_configuration/detail.html" data-hash="href">奖品设置</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i>答题管理
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/answer_management/answer_manage/index.html" data-hash="href">答题管理</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i>排名管理
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/ranking_management/personranking_manage/index.html" data-hash="href">个人排名</a>
+                      </li>
+                      <li>
+                        <a href="#/ranking_management/centerranking_manage/index.html" data-hash="href">中心排名</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a>
+                      <i class="fa fa-table"></i>获奖名单
+                      <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu">
+                      <li>
+                        <a href="#/have_prize/przie_have/index.html" data-hash="href">获奖名单</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar menu -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav clearfix">
+          <div class="nav_menu m-0">
+            <nav class="" role="navigation">
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="../../images/img.jpg" alt="">
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right" style="min-width:100px!important;">
+                    <li id="un-login" data-path="/logout.htmls" >
+                       <a href="../../login.html"><i class="fa fa-sign-out"></i>退出</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col mode-right-content" role="main">          
+            <div class="real-content" id="wj-main-content">
+              <div class="rect-table">
+                <div class="welcome-content table-cell v-middle text-center">
+                  <div class="welcome-box text-left inline-blick">
+                    <h2 class="user-name"></h2>
+                    <div>欢迎进入知识竞赛信息化管理系统</div>
+                    <div>您现在可以进行相关操作了</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- /page content -->
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            © CIO组织 版权所有
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+    <script src="../../vendors/jquery/dist/jquery.js"></script>
+    <script>
+      $('.userName').text(localStorage.userName);
+    </script>
+  </body>
+</html>

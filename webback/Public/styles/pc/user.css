@@ -1,0 +1,45 @@
+	.user-side-list { margin-bottom: 0; }
+.user-side-list .list { margin: -15px; background-color: #fff; }
+.user-side-list .list .list-group-item { line-height: 20px; padding: 20px 40px 20px 20px; margin-bottom: 0; border: none; font-size: 14px; background-color: #fff; }
+.user-side-list .list .list-group-item:after { position: absolute; z-index: 1; top: 50%; right: 16px; line-height: 1; margin-top: -6px; font-family: "Glyphicons Halflings"; content: "\e258"; text-decoration: none; font-size: 12px; color: #027c2e; -webkit-font-smoothing: antialiased; }
+.user-side-list .list .list-group-item:hover { background-color: #fff; }
+.user-side-list .list .list-group-item .num { margin-left: 8px; font-size: 12px; color: #818181; }
+.user-side-list .list .list-group-item:first-child, .user-side-list .list .list-group-item:last-child { border-radius: 0; }
+.user-side-list .list .list-group-item.active, .user-list .list .list-group-item.active:focus, .user-list .list .list-group-item.active:hover { background-color: #027c2e; }
+.user-side-list .list .list-group-item.active .num, .user-list .list .list-group-item.active:focus .num, .user-list .list .list-group-item.active:hover .num { color: #fff; }
+.user-side-list .list .list-group-item.active:after { color: #fff; }
+.user-store-list { padding: 20px 40px; margin-top: 0; margin-bottom: 1px; background-color: #fff; }
+.user-store-list .img { height: 90px; padding-right: 0; }
+.user-store-list .img img { width: 120px; height: 90px; }
+.user-store-list .info { position: relative; padding: 12px 20px; }
+.user-store-list .info .tt { margin-bottom: 20px; }
+.user-store-list .info .address { font-size: 14px; }
+.user-store-list .info .address .fa { display: inline-block; margin: -4px 8px 0 0; vertical-align: middle; font-size: 30px; color: #027c2e; }
+.user-store-list .info .detail-btn { position: absolute; top: 50%; right: 24px; margin-top: -16px; }
+.user-setting-form { padding-bottom: 100px; }
+.setting-panel .title { padding: 8px 16px; border-bottom: 1px solid #027c2e; }
+.setting-panel .title .tt { line-height: 30px; }
+.setting-panel .img-area .img-block { width: 100%; height: 300px; margin-bottom: 16px; }
+.setting-panel .img-area .img-block img { width: 100%; height: 300px; }
+.setting-panel .img-area .image-crop { float: left; width: 200px; height: 200px; min-height: 200px; max-height: 200px; margin: 0 14px 14px 0; }
+.image-crop, .img-preview { background-color: #f7f7f7; width: 200px; text-align: center; }
+.image-crop > img { max-width: 100%; }
+.img-preview { float: left; margin-right: 14px; overflow: hidden; }
+.img-preview > img { max-width: 100%; }
+.preview-md { width: 100px; height: 100px; }
+.preview-sm { width: 50px; height: 50px; margin-right: 0; }
+.setting-panel .btns-group .btn { margin-right: 14px; }
+.my-server-list .list-group-item { border: none; border-top: 1px dotted #ccc; }
+.my-server-list .list-group-item:last-child, .my-server-list .list-group-item:first-child { margin-bottom: 0; border-radius: 0; border-radius: 0; }
+.my-server-list .list-group-item:first-child { border-top: none; }
+.my-server-list .list-group-item .date { background-color: #027c2e; }
+.login-modal .header { position: relative; padding-bottom: 0; border-bottom: none; text-align: center; }
+.login-modal .header .close { position: absolute; top: 10px; right: 10px; }
+.login-modal .title { position: relative; height: 50px; margin-bottom: 20px; }
+.login-modal .title .tt { position: absolute; z-index: 2; top: 50%; left: 50%; width: 120px; height: 24px; line-height: 24px; margin: -12px 0 0 -60px; text-align: center; font-size: 14px; color: #333; background-color: #fff; }
+.login-modal .title .line { position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background-color: #cdcdcd; }
+.login-modal .modal-footer { line-height: 20px; padding: 16px 0; margin-top: 20px; border-top: 1px solid #cdcdcd; text-align: center; font-size: 12px; color: #979797; }
+.login-modal .modal-footer a { color: #027c2e; }
+.certified-area { min-height: 600px; padding-top: 200px; }
+.certified-area .btn-groups { text-align: center; }
+.certified-area .btn-groups .btn { width: 320px; margin: 10px 0; }

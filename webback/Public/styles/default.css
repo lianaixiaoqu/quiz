@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+/* CSS Document */
+dl, dt, dd, ul, ol, li { list-style-type: none; }
+h5, h6 { font-size: 100%; font-weight: normal; }
+address, caption, cite, code, dfn, em, th, var { font-style: normal; font-weight: 500; }
+select, input { font-size: 12px; vertical-align: middle; _vertical-align: baseline; outline: none; }
+input { padding: 0; border-radius: 0; -webkit-appearance: none; }
+input[type="checkbox"] { -webkit-appearance: checkbox; }
+input[type="radio"] { -webkit-appearance: radio; }
+textarea { resize: none; outline: none; }
+img { border: none; }
+audio:not([controls]) { display: none; }
+input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner { border: none; padding: 0; }
+
+/*firefox input text-align center*/
+.clearfix:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
+.clearfix { zoom: 1; }
+
+/*
+**styles reset end && page style begin**
+*/
+.flash-wrapper { .alert { border-radius: 0; }
+}
+.form-horizontal { .control-label { padding-top: 0; }
+}
+
+/*login styles*/
+.loginBox { position: absolute; top: 50%; left: 50%; width: 400px; padding: 24px; margin: -200px 0 0 -200px; border: 1px solid #e5e6e7; border-radius: 8px; background-color: #fff; }
+.loginBox .tt { margin: 0 0 24px; text-align: center; }
+.loginBox .form-group { margin-right: 0; margin-left: 0; }
+.loginBox .form-group label { line-height: 34px; padding: 0; margin-bottom: 0; }
+.loginBox .form-group .inputBox { padding: 0; }
+.loginBox .form-group .checkbox-inline { padding-top: 0; }
+.loginBox .form-group .checkbox-inline label { line-height: inherit; }
+.loginBox .actions { text-align: center; }
+.loginBox .actions .btn { width: 80px; }
+.loginBox .actions a { margin-left: 8px; }
+
+/*side nav styles*/
+.nav > li.active > a.tt { padding-left: 21px; border-left: 4px solid #19aa8d; background: #293846; }
+.nav > li > a i { width: 20px; text-align: center; }
+.nav > li ul.nav-second-level { padding: 4px 0; border-bottom: 1px solid #293846; }
+.nav > li ul.nav-second-level li a { display: block; padding: 10px 20px 10px 54px; color: #a7b1c2; }
+.nav > li ul.nav-second-level li a:hover, .nav > li ul.nav-second-level li.active a { color: #fff; background: #293846; }
+.nav-second-level li:last-child { margin-bottom: 0; }
+
+/*index style*/
+.formTitle { padding: 16px 14px; font-size: 1rem; font-weight: normal; }
+#offline_success { line-height: 2rem; padding-top: 4rem; text-align: center; font-size: 1.2rem; }
+#user_birthday { background-color: transparent; }
+
+/*ibox-title styles*/
+.ibox-title .btn { margin-bottom: 0; }
+.ibox-title .dlBtn { margin-top: -8px; margin-bottom: 0; }
+.ibox-title .search { margin-right: 32px; }
+.ibox-title .search .btn { margin-top: -8px; margin-bottom: 0; }
+.ibox-title .titleSelect { width: auto; margin-top: -8px; margin-right: 8px; }
+.ibox-title .dateSelect { width: 160px; margin-top: -8px; margin-right: 8px; }
+.ibox-title .dateSelect .form-control { width: auto; }
+
+/*pagination styles*/
+.pagination .gap, .pagination a { position: relative; float: left; line-height: 1.42857; padding: 4px 10px; margin-left: -1px; border: 1px solid #DDDDDD; color: inherit; text-decoration: none; background-color: #FFFFFF; }
+.pagination a:hover { background-color: #f4f4f4; }
+.pagination .page.current { z-index: 2; float: left; padding: 4px 10px; margin-left: -1px; border: 1px solid #DDDDDD; color: inherit; background-color: #f4f4f4; }
+.pagination>span:first-child>a, .pagination>span:first-child { margin-left: 0; border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
+.pagination>span:last-child>a, .pagination>span:last-child { border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
+
+/*reset styles*/
+.bfL { float: left; }
+.bfR { float: right; }
+.txtC { text-align: center; }
+.txtR { text-align: right; }
+.mt20 { margin-top: 20px; }
+.mt7 { margin-top: 7px; }
+.mr10 { margin-right: 10px; }
+.mr20 { margin-right: 20px; }
+.nonmargin{margin:0!important;}
+
+.dpxx li{position: relative;float:left;margin-left:5px;border:solid 1px #EEE;padding:5px;margin-top:5px;}
+.dpxx li .pdis{width:50px;text-align:center;display:inline!important;margin-top:4px;height:28px!important;}
+.zs_del {background:url(../images/close.jpg) no-repeat 0 0; width:16px; height:16px; position:absolute; top:5px; right:5px; cursor:pointer;}

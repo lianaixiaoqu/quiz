@@ -1,0 +1,207 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form { margin: 0; }
+ol, ul, textarea { margin: 0; padding: 0; }
+body { font: 12px Arial, Helvetica, sans-serif; line-height: normal!important; color: #000; background: #FFF url(../images/bg.gif) repeat; }
+dl, dt, dd, ul, ol, li { list-style-type: none; }
+h5, h6 { font-size: 100%; font-weight: normal; }
+select, input { font-size: 12px; vertical-align: middle; _vertical-align: baseline; outline: none; }
+input { padding: 0; border-radius: 0; -webkit-appearance: none; }
+input[type="checkbox"] { -webkit-appearance: checkbox; }
+input[type="radio"] { -webkit-appearance: radio; }
+textarea { resize: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+/*table { border-collapse: collapse; border-spacing: 0; }*/
+img { border: none; }
+a { color: #000; text-decoration: none; }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; }
+audio:not([controls]) { display: none; }
+input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner {
+border:none;
+padding:0;
+}/*firefox input text-align center*/
+.clearfix:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
+.clearfix { zoom: 1; }
+/*
+**styles reset end && page style begin**
+*/
+/*box style*/
+#box { position: absolute; top: 44%; left: 50%; }
+.boxSmall { width: 477px; padding-bottom: 16px; margin-left: -238px; background: url(../images/boxSmall_bot.png) no-repeat left bottom; }
+.boxSmallT { height: 10px; background: url(../images/boxSmall_top.png) no-repeat left top; overflow: hidden; }
+.boxSmallM { padding: 20px 0; background: url(../images/boxSmall_mid.png) repeat-y left top; }
+.boxBig { width: 676px; padding-bottom: 16px; margin-left: -338px; background: url(../images/boxBig_bot.png) no-repeat left bottom; }
+.boxBigT { height: 16px; background: url(../images/boxBig_top.png) no-repeat left top; overflow: hidden; }
+.boxBigM { background: url(../images/boxBig_mid.png) repeat-y left top; }
+/*regist style*/
+.regMain { padding-left: 60px; padding-right: 60px; }
+.loginMain { padding-top: 50px; padding-bottom: 50px; padding-left: 80px; }
+.boxSmallM h2 { height: 36px; line-height: 36px; padding-left: 44px; font-family: "黑体"; font-size: 26px; color: #3e3a39; }
+.boxSmallM h2.regIcon { background: url(../images/regIcon.gif) no-repeat left center; }
+.boxSmallM h2.confIcon { background: url(../images/confIcon.gif) no-repeat left center; }
+.boxSmallM h2.payIcon { background: url(../images/payIcon.gif) no-repeat left center; }
+.boxSmallM h2.successIcon { background: url(../images/successIcon.gif) no-repeat left center; }
+.regForm td { line-height: 28px; padding: 8px 0; font-family: "黑体"; font-size: 18px; color: #3e3a39; }
+.regForm.tight td { padding: 5px; }
+.regForm td a.codeImg { width: 70px; height: 28px; margin-left: 8px; background: #FFF; }
+.regForm td input.codeBtn.codeBtn { width: 145px; height: 28px; line-height: 28px; border: none; text-align: center; font-family: "Microsoft Yahei"; font-size: 17px; color: #3e3a39; background: url(../images/codeBtn.gif) no-repeat left top; cursor: pointer; }
+.regForm td input.codeBtn:disabled { background-position: left bottom; cursor: default; }
+.regForm td p.codeInfo { margin-left: 8px; font-family: "Microsoft Yahei"; font-size: 15px; color: #595757; }
+.regForm td a.lost { font-size: 14px; }
+/*reservation style*/
+.logOutBox { position: absolute; top: 20px; right: 40px; width: 251px; height: 24px; line-height: 24px; font-family: "黑体"; color: #000; background: url(../images/logoutBg.gif) no-repeat left top; }
+.logOutBox .account { width: 124px; height: 24px; padding-left: 8px; border-right: 1px solid #000; }
+.logOutBox .link { width: 70px; height: 24px; border-right: 1px solid #000; }
+.logOutBox .link a { display: block; height: 24px; padding-left: 16px; color: #5084d8; background: url(../images/mineIcon_s.gif) no-repeat 4px center; }
+.logOutBox .logout { width: 47px; text-align: center; }
+.logOutBox .logout a:hover { text-decoration: underline; }
+.titleTag { position: absolute; top: -28px; left: 20px; }
+.titleTag li { position: relative; float: left; width: 220px; height: 30px; margin-right: 8px; }
+.titleTag li a { display: block; width: 188px; height: 30px; line-height: 30px; padding-left: 32px; font-family: "Microsoft Yahei"; font-size: 15px; color: #FFF; background: url(../images/titleTag.gif) no-repeat left top; }
+.titleTag li a:hover { color: #484443; background-position: left bottom; }
+.titleTag li.current { bottom: -2px; }
+.titleTag li.current a, .titleTag li.current a:hover { color: #FFF; background-position: left -30px; }
+.reservationMain { width: 620px; margin: 0 auto; }
+.reservationMain h2.title { text-align: center; font-family: "Microsoft Yahei"; font-weight: normal; font-size: 30px; color: #3e3a39; }
+.reservationMain .tag { float: left; height: 21px; padding-right: 10px; margin-left: 60px; background: #3e3a39 url(../images/tagBg_r.gif) no-repeat right top; }
+.reservationMain .tagL { float: left; width: 10px; height: 21px; background: url(../images/tagBg_l.gif) no-repeat left top; }
+.reservationMain .tagM { float: left; line-height: 21px; padding: 0 10px; font-family: "Microsoft Yahei"; font-size: 14px; color: #FFF; }
+.reservationList { padding-bottom: 14px; }
+.reservationList.AM { border-bottom: 2px solid #b0c7ec; }
+.reservationList li { float: left; margin: 14px 61px 0 0; }
+.reservationList li.last { margin-right: 0; }
+.reservationList li .timeTag { float: left; width: 55px; height: 25px; line-height: 25px; text-align: center; font-family: "Microsoft Yahei"; font-size: 14px; color: #FFF; background: url(../images/timeTag.gif) no-repeat left top; }
+.reservationList li .dotList { float: left; width: 111px; }
+.reservationList li .dotList li { float: left; padding: 0 0 0 12px; margin: 0 0 0 0; background: url(../images/line1x1.gif) repeat-x left center; }
+.reservationList li .dotList li .dotBox { position: relative; z-index: 1; width: 25px; height: 25px; background-color: #FFF; cursor: pointer; }
+.reservationList li .dotList li.disabled .dotBox { background-color: #e10012; cursor: default; }
+.reservationList li .dotList li .dotBox .bg { position: absolute; top: 0; left: 0; width: 25px; height: 25px; line-height: 25px; text-align: center; font-family: "Microsoft Yahei"; font-size: 14px; color: #FFF; background: url(../images/dotBg.png) no-repeat left top; }
+.reservationList li .dotList li.current .dotBox .bg { background-color: #5083d7; }
+.reservationList li .dotList li .dotBox .selectBox { display: none; position: absolute; z-index: 10; top: 26px; left: -7px; width: 250px; padding: 6px 6px 2px; border: 1px solid #9c9490; background-color: #eceded; cursor: default; }
+.reservationList li .dotList li.active .dotBox { z-index: 10; }
+.reservationList li .dotList li.active .dotBox .selectBox { display: block; }
+.reservationList li .dotList li .dotBox .selectBox .arrow { position: absolute; top: -8px; left: 14px; width: 9px; height: 8px; background: url(../images/arrow.png) no-repeat left top; overflow: hidden; }
+.reservationList li .dotList li .dotBox .selectBox .selectList dd { width: 250px; height: 21px; margin-bottom: 4px; cursor: pointer; }
+.reservationList li .dotList li .dotBox .selectBox .selectList .select1 { background: url(../images/select1.gif) no-repeat 0 0; }
+.reservationList li .dotList li .dotBox .selectBox .selectList .select2 { background: url(../images/select2.gif) no-repeat 0 0; }
+.reservationList li .dotList li .dotBox .selectBox .selectList .select1.on { background: url(../images/select1.gif) no-repeat 0 -21px; }
+.reservationList li .dotList li .dotBox .selectBox .selectList .select2.on { background: url(../images/select2.gif) no-repeat 0 -21px; }
+.reservationList li .dotList li .dotBox .selectBox .selectList .select1.disabled { background: url(../images/select1.gif) no-repeat 0 -42px; cursor: default; }
+.reservationList li .dotList li .dotBox .selectBox .selectList .select2.disabled { background: url(../images/select2.gif) no-repeat 0 -42px; cursor: default; }
+.reserInfo li { float: left; margin-right: 14px; }
+.reserInfo li span { float: left; height: 22px; line-height: 22px; font-family: "Microsoft Yahei"; font-size: 13px; color: #222; }
+.reserInfo li span.red { width: 22px; height: 22px; margin-right: 4px; background: url(../images/dot.gif) no-repeat left bottom; }
+.reserInfo li span.white { width: 22px; height: 22px; margin-right: 4px; background: url(../images/dot.gif) no-repeat left top; }
+.dateBox { position: absolute; top: -50px; right: 0; }
+#dateInput { width: 140px; height: 24px; line-height: 24px; padding: 2px 24px 2px 16px; border: none; font-family: "Microsoft Yahei"; font-size: 16px; color: #3e3a39; background: url(../images/dateInput.gif) no-repeat left top; cursor: pointer; }
+#btn_total { position: absolute; bottom: -20px; right: 28px; width: 164px; height: 50px; padding: 4px 0 6px; background: url(../images/btn_total.png) no-repeat left top; }
+#btn_total p { line-height: 25px; color: #5083d7; }
+#btn_total p span { display: block; padding-left: 36px; font-family: "Microsoft Yahei"; font-size: 16px; background: url(../images/totalIcon.png) no-repeat 12px center; }
+#btn_total p b { padding: 0 4px; font-size: 18px; }
+#btn_total p i { padding-left: 26px; font-style: normal; }
+#btn_reser { position: absolute; bottom: -80px; left: 0; display: block; width: 187px; height: 57px; background: url(../images/btn_book.png) no-repeat left top; }
+#btn_tips{position: absolute;bottom: -60px;right: 136px;font-size: 14px;}
+#btn_next { position: absolute; bottom: -80px; right: 0; display: block; width: 121px; height: 54px; background: url(../images/btn_next.png) no-repeat left top; }
+.alertBox { display: none; position: relative; width: 380px; padding: 50px 30px; border: 1px solid #e1e1e1; border-radius: 2px; box-shadow: -4px 4px 6px #a8a6a6; font-family: "Microsoft Yahei"; background-color: #FFF; }
+.alertTT { position: absolute; top: 0; left: 0; width: 380px; height: 50px; line-height: 50px; padding: 0 30px; font-size: 26px; color: #FFF; background-color: #5083d7; }
+.alertTTInfo { line-height: 32px; padding-top: 20px; font-size: 20px; color: #3e3a39; }
+.alertInfo { min-height: 100px; padding-left: 90px; font-size: 16px; color: #3e3a39; background: url(../images/alertIcon.gif) no-repeat left center; }
+.alertInfo p { line-height: 30px; margin-top: 8px; }
+.confirmBtn { position: absolute; right: 14px; bottom: 14px; width: 74px; height: 30px; line-height: 30px; text-align: center; font-family: "Microsoft Yahei"; font-size: 18px; color: #000; background: url(../images/confirmBtn.gif) no-repeat left top; cursor: pointer; }
+/*datepicker style*/
+#ui-datepicker-div { position: absolute; display: none; z-index: 100; width: 246px; margin-top: 8px; padding-bottom: 8px; border: 1px solid #c8c8c9; background: #FFF url(../images/calendarBg.gif) no-repeat center bottom; -moz-box-shadow: 3px 3px 4px silver; -webkit-box-shadow: 3px 3px 4px silver; box-shadow: 3px 3px 4px silver; -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='silver')"; filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='silver');
+}
+.ui-datepicker-header { width: 100%; height: 40px; border-bottom: 1px solid #c8c8c9; background-color: #f1f1f1; }
+.ui-datepicker-header a { display: block; width: 35px; height: 40px; padding: 0; text-indent: -999em; background-position: 50% 50%; background-repeat: no-repeat; cursor: pointer; }
+.ui-datepicker-header .ui-datepicker-prev { float: left; border-right: 1px solid #c8c8c9; background-image: url(../images/dateInput/prev_mon.gif); }
+.ui-datepicker-header .ui-datepicker-next { float: right; border-left: 1px solid #c8c8c9; background-image: url(../images/dateInput/next_mon.gif); }
+.ui-datepicker-header .ui-datepicker-title { padding: 0; height: 40px; line-height: 40px; text-align: center; font-family: Tahoma, Geneva, sans-serif; white-space: nowrap; font-size: 16px; font-weight: bold; color: #6e6e6e; }
+.ui-datepicker-calendar { width: 210px; margin: 6px 18px; }
+.ui-datepicker-calendar th { height: 26px; line-height: 26px; text-align: center; font-size: 12px; color: #38383b; }
+.ui-datepicker-calendar td { height: 26px; line-height: 26px; border: 0; border-radius: 4px; text-align: center; font-family: Tahoma, Geneva, sans-serif; width: 14%; font-size: 11px; cursor: pointer; }
+.ui-datepicker-calendar td:hover, #tcalGrid td.tcalWeekend:hover { background-color: #e7e7e7; }
+.ui-datepicker-calendar td.ui-datepicker-today, .ui-datepicker-calendar td.ui-datepicker-current-day { font-weight: bold; color: #454647; background-color: #d6d6d6; }
+.ui-datepicker-calendar td.ui-state-disabled { color: #A6A3A7; cursor: default; }
+.ui-datepicker-calendar td.ui-state-disabled:hover { background-color: inherit; }
+/*mine style*/
+.mineMain { position: relative; padding-bottom: 40px; }
+.mineTop { padding: 20px 64px 0 34px; }
+.mineTop h2.mineIcon { height: 34px; line-height: 34px; padding-left: 44px; font-family: "黑体"; font-size: 26px; color: #3e3a39; background: url(../images/mineIcon.gif) no-repeat left center; }
+.mineTop .mineStatus { margin-top: 4px; font-family: "Microsoft Yahei"; font-size: 16px; }
+.mineTop .mineStatus .mStatusInfo { line-height: 27px; font-weight: bold; color: #3e3a39; margin-right: 8px; }
+.mineTop .mineStatus #payBtn { width: 222px; height: 27px; line-height: 27px; color: #FFF; text-align: center; background: url(../images/payBtn.gif) no-repeat left top; }
+.mineList { width: 560px; min-height: 220px; margin: 30px auto 0; }
+.mineList table th, .mineList table td { line-height: 22px; padding: 4px; font-family: "Microsoft Yahei"; font-size: 16px; color: #5083d7; border: 1px solid #a7a7a7; }
+.mineList table td { text-align: center; font-weight: bold; color: #3e3a39; }
+.mineMain .pageList { position: absolute; right: 20px; bottom: 10px; font-size: 14px; color: #585453; }
+.mineMain .pageList span { padding: 0 2px; border: 1px solid #c0c0c0; font-size: 12px; }
+.mineMain .backBtn, .mineMain .nextBtn { position: absolute; top: 50%; width: 34px; height: 34px; margin-top: -17px; background-repeat: no-repeat; background-image: url(../images/NBBtn.png); }
+.mineMain .backBtn a, .mineMain .nextBtn a { display: block; width: 34px; height: 34px; }
+.mineMain .backBtn { left: -12px; background-position: 0 -34px; }
+.mineMain .nextBtn { right: -12px; background-position: -34px -34px; }
+.mineMain .backBtn.disabled { background-position: 0 0; cursor: default; }
+.mineMain .nextBtn.disabled { background-position: -34px 0; cursor: default; }
+#btn_back { position: absolute; bottom: -90px; right: 0; display: block; width: 180px; height: 51px; background: url(../images/btn_back.png) no-repeat left top; }
+/*confirm style*/
+.confirmTag { width: 276px; height: 30px; line-height: 30px; padding-left: 36px; letter-spacing: 4px; font-family: "Microsoft Yahei"; font-size: 15px; color: #373332; background: url(../images/tagBg.gif) no-repeat left top; }
+.confirmChk { margin: 8px 0 0 8px; }
+#btn_backS { position: absolute; bottom: -50px; left: 0; display: block; width: 76px; height: 34px; background: url(../images/btn_back_s.png) no-repeat left top; }
+/*pay style*/
+.payMain { font-family: "黑体"; font-size: 18px; color: #3e3a39; }
+.payMain .tag { float: left; height: 21px; padding-right: 10px; background: #3e3a39 url(../images/tagBg_r.gif) no-repeat right top; }
+.payMain .tagL { float: left; width: 10px; height: 21px; background: url(../images/tagBg_l.gif) no-repeat left top; }
+.payMain .tagM { float: left; line-height: 21px; padding: 0 10px; font-family: "Microsoft Yahei"; font-size: 14px; color: #FFF; }
+/*success style*/
+.successMain { padding-left: 50px; padding-right: 50px; }
+.successBox p { margin-top: 14px; font-family: "黑体"; font-size: 19px; color: #3e3a39; }
+.successBox p .linkBtn { width: 307px; height: 33px; line-height: 33px; padding-left: 8px; margin: 8px 10px 0 0; font-family: "Microsoft Yahei"; font-size: 17px; color: #FFF; background: url(../images/blueBtn_long.gif) no-repeat left top; }
+.logoBig { position: absolute; top: -80px; left: 50%; width: 234px; height: 54px; margin-left: -117px; background: url(../images/logo_big.png) no-repeat left top; }
+/*input style*/
+.blueBtn, a.blueBtn { display: block; width: 114px; height: 35px; line-height: 35px; border: none; text-align: center; font-family: "Microsoft Yahei"; font-size: 18px; color: #FFF; background: url(../images/blueBtnBg.gif) no-repeat left top; cursor: pointer; }
+.whiteBtn, a.whiteBtn { display: block; width: 150px; height: 35px; line-height: 35px; border: none; text-align: center; font-family: "黑体"; font-size: 15px; color: #3e3a39; background: url(../images/whiteBtnBg.gif) no-repeat left top; cursor: pointer; }
+.whiteBtnS, a.whiteBtnS { display: block; width: 56px; height: 35px; line-height: 35px; border: none; text-align: center; font-family: "黑体"; font-size: 15px; color: #3e3a39; background: url(../images/whiteBtnBg_s.gif) no-repeat left top; cursor: pointer; }
+.input250 { width: 220px; height: 20px; line-height: 20px; padding: 4px 15px; border: none; font-size: 18px; color: #3e3a39; background: url(../images/input250.gif) no-repeat left top; }
+.input170 { width: 140px; height: 20px; line-height: 20px; padding: 4px 15px; border: none; font-size: 18px; color: #3e3a39; background: url(../images/input170.gif) no-repeat left top; }
+/*bottom style*/
+.bottomNav { position: absolute; bottom: 30px; left: 50%; width: 497px; height: 27px; margin-left: -248px; background-image: url(../images/bottomNav.gif); background-repeat: no-repeat; }
+.bottomNav.nav1 { background-position: 0 0; }
+.bottomNav.nav2 { background-position: 0 -27px; }
+.bottomNav.nav3 { background-position: 0 -54px; }
+.bottomNav.nav4 { background-position: 0 -81px; }
+.logo { position: absolute; right: 90px; bottom: 30px; width: 142px; height: 33px; background: url(../images/logo.png) no-repeat left top; }
+/*backstable style*/
+.backstable { position: relative; margin: 20px auto; border-collapse: collapse; border-spacing: 0; border-color: #000; font-family: "Microsoft Yahei"; }
+.backstable caption { padding-bottom: 10px; font-size: 20px; font-weight: bold; }
+.backstable caption span { padding: 0 4px; }
+.backstable th { padding: 4px 0; border-color: #000; font-size: 16px; }
+.backstable td { height: 48px; border-color: #000; text-align: center; color: #000; }
+.backstable .insideTB { border-collapse: collapse; border-spacing: 0; border-color: #000; }
+.backstable .insideTB td { height: 24px; *border-bottom: 1px solid #000;
+}
+.backstable .insideTB td.leftBd { line-height: 14px; border-left: 1px solid #000; }
+.backstable .tbLogo { position: absolute; right: -1px; bottom: -1px; background-color: #FFF; }
+.backstable .tbLogo img { position: absolute; right: 0; bottom: 0; }
+.backstable.table1 .tbLogo { width: 480px; height: 100px; }
+.backstable.table2 .tbLogo { width: 360px; height: 100px; }
+/*
+**page style end && class reset begin**
+*/
+.hide { display: none; }
+.show { display: block; }
+.bfL { float: left; }
+.bfR { float: right; }
+.mAuto { margin-right: auto; margin-left: auto; }
+.mt10 { margin-top: 10px; }
+.mt20 { margin-top: 20px; }
+.mb10 { margin-bottom: 10px; }
+.mb30 { margin-bottom: 30px; }
+.ml10 { margin-left: 10px; }
+.txtL { text-align: left; }
+.txtC { text-align: center; }
+.txtR { text-align: right; }
+.noBg { background-image: none; }
+/*
+**class reset end**
+*/

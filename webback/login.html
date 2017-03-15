@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="css/custom.css" rel="stylesheet">
+    <style>
+      #error{margin-bottom: 20px;}
+    </style>
+  </head>
+    
+  <body style="background:#F7F7F7;">
+    <!-- 加载过渡 -->
+    <div class="loading-modal load"></div>
+    
+    <!--主体-->
+    <div class="">
+
+      <div id="wrapper">
+        <div id="login" class=" form">
+          <section class="login_content">
+            <form  action="" class="form-horizontal" target="_self" id="login-form"  method="post">
+              <h1>请输入用户信息</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="用户名" name="loginName" id="user_login_name" required>
+                <label id="user_login_name-error" class="error" for="user_login_name"></label>
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="密码" name="password" id="user_password" required rangelength="6,22">
+                <label id="user_password-error" class="error" for="user_password"></label>
+              </div>
+              <div id="error"></div>
+              <div class="submit-password">
+                <button class="btn btn-default submit sub-btn" type="submit">登录</button>
+              </div>
+              <div class="clearfix"></div>
+            </form>
+          </section>
+        </div>
+      </div> 
+    </div>
+    <script src="js/config.js"></script>
+    <script src="vendors/jquery/dist/jquery.js"></script>
+    <script src="vendors/validator/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+      $(function(){   
+      
+
+        //设置接口地址
+//        var host = 'http://139.219.226.16:8443';
+       var host = 'http://88.88.88.2:8443';
+
+        /*表单验证*/
+        $("#login-form").validate({
+          submitHandler : function(){
+            $('.sub-btn').prop("disabled",true).text('登录中...');
+            $.ajax({
+              type: "POST",
+              dataType:'JSON',
+              url: host + "/login",
+              data: $('#login-form').serialize(),
+              success: function(data){
+                $('.sub-btn').prop("disabled",false).text('登录');
+                if (data.data.backUser == 'success') {
+                    window.name = encodeURIComponent(host);
+                    window.location.href = 'back/init';
+                    localStorage.userName = data.data.userName;
+                  } else {
+                    $("#error").html("<span style='color:red'>用户名或密码错误</span>");
+                } 
+              },
+              error: function(xhr,status,error){
+                $('.sub-btn').prop("disabled",false).text('登录');
+                $("#error").html("<span style='color:red'>网络有误，请稍后再试。</span>");
+              },
+              xhrFields: {
+                  withCredentials: true
+              }
+           });
+           return false;//阻止表单提交
+           }
+         }); 
+       });
+  </script>
+    
+  </body>
+</html>
+
+
+
+

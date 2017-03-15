@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+	<title>知识微答</title>
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="vendors/jquery/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div class="top-dashed top-dashed-cumulative">
+		<p>答对：<span class="orange-span success-subject"></span>题 <span class="right-question">正确率：</span><span class="orange-span activity-are"></span></p>
+		<p>累计回合数:<span class="orange-span number-close"></span>关 <span class="cumulative-star">累计星数</span>: <span class="orange-span star-span"></span>星</p>
+		<p class="no-margin">您已经打败了<span class="beat-people"></span>人，请向榜首发起冲击!</p>
+	</div>
+	<div class="suspension-btn">
+		
+	</div>
+	<div class="down-star clearfix">
+		
+	</div>
+	<script src="js/tmpl.js"></script>
+	<script src="js/common.js"></script>
+	<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		$.ajax({
+			type:'GET',
+			dataType:'json',
+			url: dataUrl + '/person/info?userId='+localStorage.userId+'&activityId=1',
+			data:{},
+		}).then(function(data){
+			$('.success-subject').text(data.data.info.correctAmount);
+			$('.activity-are').text(data.data.info.correctRate);
+			$('.number-close').text(data.data.info.sectionAmount);
+			$('.star-span').text(data.data.info.stars);
+			$('.beat-people').text(data.data.info.beat);
+			$('.suspension-btn').html('<span>欢迎来到知识擂台</span><a href="index.html?userId='+ localStorage.userId +'">返回首页</a>')
+		})
+		$.ajax({
+			type:'GET',
+			dataType:'json',
+			url: dataUrl + '/section?userId='+localStorage.userId+'&activityId=1',
+			data:{},
+		}).then(function(data){
+			var data = data.data.result;
+			var image = '';
+			for( var i=0; i<data.length;i++ ){
+				if(data[i].starCount == '1' ){
+					image += '<div class="star-checkpoint">\
+						<a data-section='+ data[i].id +' href="submit.html?sectionId='+ data[i].id +'"><img src="images/2.2微信关卡_05.png" alt="加载失败"></a>\
+						<div class="star-number clearfix">\
+							<span class="star-one">'+ data[i].sequenceInActivity +'</span>\
+						</div>\
+					</div>'
+				}else if(data[i].starCount == '2'){
+					image += '<div class="star-checkpoint">\
+						<a data-section='+ data[i].id +' href="submit.html?sectionId='+ data[i].id +'"><img src="images/2.2微信关卡_07.png" alt="加载失败"></a>\
+						<div class="star-number clearfix">\
+							<span class="star-one">'+ data[i].sequenceInActivity +'</span>\
+						</div>\
+					</div>'
+				}else if(data[i].starCount == '3'){
+					image += '<div class="star-checkpoint">\
+						<a data-section='+ data[i].id +' href="submit.html?sectionId='+ data[i].id +'"><img src="images/2.2微信关卡_09.png" alt="加载失败"></a>\
+						<div class="star-number clearfix">\
+							<span class="star-one">'+ data[i].sequenceInActivity +'</span>\
+						</div>\
+					</div>'
+				}else if(data[i].starCount == '4'){
+					image += '<div class="star-checkpoint">\
+						<a data-section='+ data[i].id +' href="submit.html?sectionId='+ data[i].id +'"><img src="images/2.2微信关卡_17.png" alt="加载失败"></a>\
+						<div class="star-number clearfix">\
+							<span class="star-one">'+ data[i].sequenceInActivity +'</span>\
+						</div>\
+					</div>'
+				}else if(data[i].starCount == '5'){
+					image += '<div class="star-checkpoint">\
+						<a data-section='+ data[i].id +' href="submit.html?sectionId='+ data[i].id +'"><img src="images/2.2微信关卡_18.png" alt="加载失败"></a>\
+						<div class="star-number clearfix">\
+							<span class="star-one">'+ data[i].sequenceInActivity +'</span>\
+						</div>\
+					</div>'
+				}else if(data[i].starCount == '0'){
+					image += '<div class="star-checkpoint">\
+						<a data-section='+ data[i].id +' class="grey-button"><img src="images/2.2微信关卡_23.png" alt="加载失败"></a>\
+						<div class="star-number clearfix">\
+							<span class="star-one"></span>\
+						</div>\
+					</div>'
+				}else if(data[i].starCount == '7'){
+					image += '<div class="star-checkpoint">\
+						<a data-section='+ data[i].id +' href="submit.html?sectionId='+ data[i].id +'"><img src="images/2.2微信关卡_16.png" alt="加载失败"></a>\
+						<div class="star-number clearfix">\
+							<span class="star-one"></span>\
+						</div>\
+					</div>'
+				}
+			}
+			$('.down-star').html(image);
+			$('.down-star').on('click','.grey-button',function(){
+				var sectionId = $(this).attr('data-section');
+				$.ajax({
+					type:'GET',
+					dataType:'json',
+					url: dataUrl + '/person/getstars?sectionId=' + sectionId + '&activityId=1&userId='+ localStorage.userId +'',
+				}).then(function(data){
+					if( data.data.info.lock == '1' ){
+						alert(data.data.info.detialHint);	
+					}
+				})
+			})
+				
+ 		})
+ 		
+	</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+ <script src='../../js/redirect.js'></script>
+ <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- page content -->
+<div class="row right-content">
+  <div class="col-xs-12">
+
+    <div class="x_panel">
+     <form class="form-horizontal" action="" target="_self" id="search-form">
+      <div class="x_title clearfix">
+        <h2 class="width-auto">试题管理</h2>
+        <div class="col-md-offset-1">
+           <div class="pull-right">
+              <a href="#/question_bank/question_manage/insert.html" class="btn btn-success bg-theme border-theme" type="submit">增加试题</a>
+           </div>
+           <div class="pull-right">
+              <button class="btn btn-success bg-theme border-theme" type="submit"><i class="fa fa-search" aria-hidden="true"></i>搜索</button>
+           </div>
+            
+          <div class="col-md-2 col-sm-2 col-xs-2 pull-right">
+                <select class="form-control dictionary-status" name="difficult">
+                  <option value>选择难度</option>
+                    <option value="0">难</option>
+                    <option value="1">中</option>
+                    <option value="2">易</option>
+                </select>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 pull-right">
+            <select class="form-control dictionary-status" name="knowledge">
+              <option value>选择知识点</option>
+            </select>
+          </div>
+          <div class="col-md-2 col-sm-2 col-xs-2 pull-right">
+            <select class="form-control dictionary-status" name="type">
+                <option value>类型</option>
+                <option value="0">单选题</option>
+                <option value="1">多选题</option>
+            </select>
+          </div>
+          <div class=" col-md-2 col-sm-2 col-xs-2 pull-right">
+            <select class="form-control dictionary-black" name="category">
+              <option value>选择试题分类</option>
+            </select>
+          </div>
+      </div>
+    </div>
+  </form>
+  <form id="excel-form">
+    <input type="hidden" value="questionbank" name="uploadType">
+    <input type="file" name="file" id="">
+    <button class="btn btn-success bg-theme border-theme" type="submit">导入</button>
+  </form>
+      <div class="x_content">
+        <div class="table-responsive">
+          <table class="table table-striped jambo_table bulk_action">
+            <thead>
+              <tr class="headings ">
+                <th class="column-title">序号</th>
+                <th class="column-title">试题分类</th>
+                <th class="column-title">标题</th>
+                <th class="column-title">试题编号</th>
+                <th class="column-title">类型</th>
+                <th class="column-title">知识点</th>
+                <th class="column-title">难度</th>
+                <th class="column-title no-link last"><span class="nobr">操作</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+                <!-- <tr>
+                  <td  class="column-title"><input type="checkbox" class="flat"></td>
+                  <td  class="column-title">123</td>
+                  <td  class="column-title">123</td>
+                  <td  class="column-title">123</td>
+                  <td  class="column-title">123</td>
+                  <td  class="column-title">123</td>
+                  <td  class="column-title">123</td>
+                  <td  class="column-title">123</td>
+                  <td  class="column-title">
+                    <a class="fa fa-eye" title="查看"></a>                  
+                    <a href= '#/question_bank/question_manage/modify.html' class='fa fa-lg fa-pencil-square-o' title='修改'></a> 
+                    <a href= 'javascript:void(0);' class='fa fa-lg fa-trash-o' title='删除'></a>
+                  </td>
+                </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="pagePageCode"></div>
+</div>
+<!-- /page content -->
+      

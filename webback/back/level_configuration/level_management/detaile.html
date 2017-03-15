@@ -1,0 +1,83 @@
+ <script src='../../js/redirect.js'></script>
+<!-- page content -->
+<div class="content-price-manage" role="main">
+
+<div class="clearfix"></div>
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel top-change">
+      <div class="x_title clearfix">
+        <h2 class="width-auto">关卡配置</h2>
+      </div>
+      <div class="x_content">
+        <br/>
+        <form id="submit-form" data-parsley-validate class="form-horizontal form-label-left">
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">活动名称<span class="required"></span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <select class="form-control member_sex" name="activityId">
+                  
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">总关卡</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input id="totalPass" class="form-control col-md-7 col-xs-12 user-read chapters fff-input" type="text" name="chapters" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">每关卡关数</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input id="containPass" required class="form-control col-md-7 col-xs-12 user-read sectionsPerChapter fff-input" type="text" name="sectionsPerChapter" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">每关多少题数</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input id="questionName" required class="form-control col-md-7 col-xs-12 user-read questionsPerSection fff-input" type="text" name="questionsPerSection" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">每关易题数</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input id="easy-name" required class="form-control col-md-7 col-xs-12 user-read question-how" type="text" number="number" name="easyPerSection">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">每关中题数</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input id="normal-name" required class="form-control col-md-7 col-xs-12 user-read question-how" type="text" number="number" name="normalPerSection">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">每关难 题数</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <input id="difficult-name"  required class="form-control col-md-7 col-xs-12 user-read question-how" type="text" number="number" name="hardPerSection">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">易中难分值组合<span class="required"></span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <select id="selectEasyDifficult" class="form-control " name="scaleScore">
+                  
+                </select>
+            </div>
+          </div>
+          <div class="ln_solid"></div>
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-5">
+              <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>保存</button>
+              <!--<button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>过关条件配置</button>-->
+                <a href="../../back/init/index.html#/condition_configuration/condition_configuration/index.html"  type="button" class="btn btn-primary">过关条件配置</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

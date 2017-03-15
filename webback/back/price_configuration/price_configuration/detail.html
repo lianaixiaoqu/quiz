@@ -1,0 +1,92 @@
+<script src='../../js/redirect.js'></script>
+<!-- page content -->
+<div class="content-price-manage" role="main">
+
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel top-change">
+                <div class="x_title clearfix">
+                    <h2 class="width-auto">奖品设置</h2>
+                </div>
+                <div class="x_content">
+                    <br/>
+                    <form id="submit-form" data-parsley-validate class="form-horizontal form-label-left">
+                        <input type="hidden" value name="first_id">
+                        <input type="hidden" value name="second_id">
+                        <input type="hidden" value name="third_id">
+                        <div class="hid">
+                            <ul class="pass_active">
+                                <li class="active_id">活动ID</li>
+                                <li class="active_number">
+                                    <select name="activityId" id="activity_section">
+                                        
+                                    </select>
+                                </li>
+                                <li class="active_id">关卡</li>
+                                <li class="active_number">
+                                    <select name="ChapterId" id="chapter_section">
+                                        
+                                    </select>
+                                </li>
+                            </ul>
+                            <table class="condi_table right condi_table_input">
+                                <thead class="condi_thead">
+                                <tr>
+                                    <th></th>
+                                    <th>奖品内容</th>
+                                    <th>奖品数量</th>
+                                </tr>
+                                </thead>
+                                <tbody class="confi_tbody">
+                                <tr>
+                                    <td>
+                                        <input type="text" value="一等奖" name="first_title" disabled class="no-background">
+                                    </td>
+                                    <td>
+                                        <input type="text" required name="first_przie_name" class="text-center first-prize table0">
+                                    </td>
+                                    <td>
+                                        <input required type="text" class="no-background first-prize text-center input0"  name="first_prize_count">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" value="二等奖" name="second_title" disabled class="no-background">
+                                    </td>
+                                    <td>
+                                        <input required type="text" name="second_przie_name" class="text-center first-prize table1">
+                                    </td>
+                                    <td>
+                                        <input required type="text" class="no-background first-prize text-center input1" name="second_prize_count">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" value="三等奖" name="third_title" disabled class="no-background">
+                                    </td>
+                                    <td>
+                                        <input required type="text" name="third_przie_name" class="text-center first-prize table2">
+                                    </td>
+                                    <td>
+                                        <input required type="text" name="third_prize_count" class="first-prize text-center input2">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-5">
+                                <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>保存</button>
+                                <!--<button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>过关条件配置</button>-->
+                                <!--<a href="../../back/init/index.html#/condition_configuration/condition_configuration/index.html"  type="button" class="btn btn-primary">过关条件配置</a>-->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
